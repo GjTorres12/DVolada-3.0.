@@ -1,0 +1,21 @@
+{
+  "id": "/DVolada-3.0./",
+  "name": "Dvolada · Pedí fácil, que te llega de volada",
+  "short_name": "Dvolada",
+  "description": "Pedidos de restaurantes y mandados en San Marcos, Ocotepeque.",
+  "start_url": "/DVolada-3.0./",
+  "scope": "/DVolada-3.0./",
+  "display": "standalone",
+  "background_color": "#fff9f4",
+  "theme_color": "#f26732",
+  "lang": "es-HN",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}
