@@ -399,3 +399,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-chat-compose input{flex:1;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:var(--surface);color:var(--ink)}
 .dv-chat-compose button{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border:0;border-radius:15px;background:#f26732;color:white;cursor:pointer}.dv-chat-compose button:disabled{opacity:.45;cursor:not-allowed}
 @media(max-width:760px){.dv-chat-fab{right:16px;bottom:calc(112px + env(safe-area-inset-bottom,0px))}.dv-chat-panel{left:12px;right:12px;bottom:calc(108px + env(safe-area-inset-bottom,0px));width:auto;height:min(540px,calc(100dvh - 140px));border-radius:25px}}
+
+
+/* Customer orders: pending / history split */
+.dv-orders-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 22px;padding:6px;border:1px solid var(--line);border-radius:22px;background:var(--soft)}
+.dv-orders-tabs button{min-width:0;padding:13px 10px;border:0;border-radius:17px;background:transparent;color:var(--muted);font-weight:800;cursor:pointer}
+.dv-orders-tabs button.active{background:var(--surface);color:var(--ink);box-shadow:0 5px 18px #10203015}
+.dv-history-locked{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:36px 20px!important;border-radius:26px}
+.dv-history-locked>svg{color:var(--accent)}.dv-history-locked h2{margin:0}.dv-history-locked p{max-width:470px;line-height:1.6;color:var(--muted)}
+.dv-history-locked button{display:inline-flex;align-items:center;gap:9px;justify-content:center;border-radius:18px;min-height:46px}
+@media(max-width:380px){.dv-orders-tabs button{font-size:12px;padding:12px 6px}}
