@@ -180,3 +180,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 @media(max-width:900px){.welcome-showcase{min-height:auto;padding:25px 20px}.welcome-showcase h2{font-size:30px}.welcome-product-strip{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.welcome-product-card img{height:72px}.welcome-product-card span{font-size:10px;padding:6px}.welcome-showcase p{font-size:13px}.hero-market{min-height:auto}.hero-market-card img{height:95px}}
 @media(max-width:480px){.welcome-product-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome-product-card img{height:82px}.welcome-showcase{padding:22px 18px}.welcome-nexora img{width:160px}}
 @media(prefers-reduced-motion:reduce){.welcome-showcase-content{animation:none}.welcome-product-card,.hero-market-card{transition:none}}
+
+
+/* Mobile welcome: show only original brand and customer entry actions.
+   Desktop retains the two-column showcase. */
+@media(max-width:900px){
+  .welcome-screen .welcome-showcase{display:none!important}
+  .welcome-screen{min-height:100dvh;display:flex!important;align-items:center;justify-content:center;background:var(--bg,#faf9f6)}
+  .welcome-screen .welcome-panel{width:100%;max-width:440px;min-height:calc(100dvh - 110px);margin:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px 22px 36px;box-sizing:border-box;text-align:center}
+  .welcome-screen .welcome-panel>.welcome-nexora{display:none!important}
+  .welcome-screen .welcome-panel>.kicker,
+  .welcome-screen .welcome-panel>h1,
+  .welcome-screen .welcome-panel>p,
+  .welcome-screen .welcome-affiliates,
+  .welcome-screen .welcome-panel>small{display:none!important}
+  .welcome-screen .welcome-panel>img{display:block;width:min(82vw,320px);height:auto;max-width:100%;object-fit:contain;margin:0 auto 34px}
+  .welcome-screen .welcome-actions{width:100%;display:flex;flex-direction:column;gap:12px}
+  .welcome-screen .welcome-actions button{width:100%}
+}
