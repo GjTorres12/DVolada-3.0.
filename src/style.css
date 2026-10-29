@@ -123,3 +123,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 @keyframes dv-up{from{transform:translateY(100%)}to{transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.cart-drawer,.drawer-backdrop{animation:none}}
+
+/* Bienvenida a pantalla completa: sin navegación de compra hasta elegir acceso */
+@media(min-width:761px){.dv32:has(.welcome-screen) .dv-sidebar{display:none}.dv32:has(.welcome-screen) .topbar,.dv32:has(.welcome-screen) main,.dv32:has(.welcome-screen) footer{margin-left:0}}
+.dv32:has(.welcome-screen) .topbar,.dv32:has(.welcome-screen) .mobile-nav,.dv32:has(.welcome-screen) .mobile-cart-cta{display:none}
+.dv32:has(.welcome-screen) .welcome-screen{min-height:100svh}
