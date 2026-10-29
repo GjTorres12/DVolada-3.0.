@@ -341,3 +341,29 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  [data-theme="dark"] .dv32.dv-welcome-mode .welcome-theme-toggle{background:rgba(255,255,255,.12)!important;color:#fff!important;border-color:rgba(255,255,255,.22)!important}
  [data-theme="dark"] .dv32.dv-welcome-mode .welcome-nexora-mobile img{filter:drop-shadow(0 3px 8px rgba(0,0,0,.25))}
 }
+
+
+/* Customer order tracking: fit every card inside narrow phone viewports */
+@media(max-width:760px){
+ .dv32{max-width:100%;overflow-x:clip}
+ .dv32 main,.dv32 .page-section,.dv32 .order-list,.dv32 .order-list>.order{min-width:0;max-width:100%;box-sizing:border-box}
+ .dv32 .order-list>.order{width:100%;overflow:hidden;padding:20px 16px!important;border-radius:26px}
+ .dv32 .order-top{display:flex;flex-wrap:wrap;align-items:flex-start;gap:10px}
+ .dv32 .order-top>div{flex:1 1 100%;min-width:0;max-width:100%}
+ .dv32 .order-top .kicker{display:block;max-width:100%;overflow-wrap:anywhere;word-break:break-word;line-height:1.5;letter-spacing:.07em;font-size:10px}
+ .dv32 .order-top h3,.dv32 .order-top p{overflow-wrap:anywhere}
+ .dv32 .order-top>.status{max-width:100%;white-space:normal}
+ .dv32 .order-timeline{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 6px;overflow:visible!important;padding:18px 0!important;width:100%;box-sizing:border-box}
+ .dv32 .order-step{min-width:0!important;max-width:100%;gap:6px}
+ .dv32 .order-step>span{width:31px;height:31px}
+ .dv32 .order-step small{font-size:10px;line-height:1.25;overflow-wrap:anywhere;max-width:100%}
+ .dv32 .dv-customer-status,.dv32 .dv-customer-track,.dv32 .dv-order-tools,.dv32 .order-bottom{min-width:0;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+ .dv32 .dv-customer-status{gap:10px;flex-wrap:wrap}
+ .dv32 .dv-customer-status>div{min-width:0;flex:1 1 180px}
+ .dv32 .dv-customer-track iframe,.dv32 .dv-customer-map{max-width:100%;width:100%;box-sizing:border-box}
+ .dv32 .dv-order-tools{display:flex;flex-direction:column;align-items:stretch}
+ .dv32 .dv-order-tools button,.dv32 .dv-customer-track button{width:100%;max-width:100%;white-space:normal;min-height:44px}
+ .dv32 .order-bottom{flex-wrap:wrap;gap:12px}
+ .dv32 .order-list>.order p{overflow-wrap:anywhere}
+}
+@media(max-width:370px){.dv32 .order-list>.order{padding:16px 12px!important}.dv32 .order-timeline{gap:12px 3px}}
