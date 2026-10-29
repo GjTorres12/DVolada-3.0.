@@ -140,3 +140,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 @media(max-width:760px){.dv32 .dv-sidebar{display:none!important}}
 .dv32:has(.welcome-screen) .mobile-nav{display:none!important}
+
+/* Dvolada 3.3: categorías, pedidos y controles */
+.dv-filters{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 26px}.dv-filters button{border:1px solid var(--line);border-radius:999px;padding:10px 16px;background:var(--surface);font-size:13px;font-weight:700}.dv-filters button.chosen{background:var(--accent);color:white;border-color:var(--accent)}.dv-order-tools{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:14px 0;padding:14px;border:1px dashed var(--line);border-radius:12px}.dv-order-tools span{flex:1;font-size:13px}.dv-order-tools .secondary{padding:9px 12px;font-size:12px}.business-order>div:last-child{display:flex;flex-wrap:wrap;gap:8px}.business-order a{color:var(--accent);text-decoration:underline}.modal .qty{display:inline-flex;margin:8px 0 20px}.modal .check-label{display:flex;align-items:center;gap:12px;padding:10px 0}.modal .check-label input{width:18px;height:18px}@media(max-width:760px){.dv-order-tools{flex-direction:column;align-items:stretch}.dv-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.dv-filters button{white-space:nowrap}}
