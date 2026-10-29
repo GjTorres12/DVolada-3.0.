@@ -28,6 +28,6 @@ for(const size of [192,512]){
  const a=await sharp(artwork).metadata();
  await sharp({create:{width:size,height:size,channels:4,background:'#fff9f4'}})
   .composite([{input:artwork,left:Math.floor((size-a.width)/2),top:Math.floor((size-a.height)/2)}])
-  .png().toFile('public/icon-'+size+'.png');
+  .png().toFile('public/icon-d-'+size+'.png');
  console.log('Dvolada icon '+size+'x'+size+': orange symbol only');
 }
