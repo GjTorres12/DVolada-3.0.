@@ -212,3 +212,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .dv-welcome-mode .welcome-panel>.welcome-nexora,.dv-welcome-mode .welcome-panel>.kicker,.dv-welcome-mode .welcome-panel>h1,.dv-welcome-mode .welcome-panel>p,.dv-welcome-mode .welcome-panel>.welcome-affiliates,.dv-welcome-mode .welcome-panel>small{display:none!important}
  .dv-welcome-mode .welcome-actions{margin-top:0!important}
 }
+
+
+/* Dvolada 3.3 — fix overlapping floating label and soft liquid-style UI */
+.hero-market .floating-note{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;align-self:flex-start!important;max-width:100%;box-sizing:border-box;background:rgba(255,255,255,.13)!important;color:#fff!important;border:1px solid rgba(255,255,255,.18);border-radius:999px!important;box-shadow:none!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:10px 16px!important}
+.hero-market{height:auto!important;min-height:360px;overflow:hidden!important;box-sizing:border-box;isolation:isolate}
+.hero-market .floating-note span{color:#ffb66e}
+@media(max-width:900px){.hero-market{margin-top:0!important;min-height:0!important}.hero-market .floating-note{font-size:12px!important;line-height:1.4}}
+/* Rounded surfaces with subtle translucent glass, inspired by iOS, not a copy */
+.dv32 :is(.primary,.secondary,.cart-button,.iconbtn,.small-link,.welcome-explore,.welcome-guest){border-radius:18px;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease}
+.dv32 :is(.primary,.secondary,.cart-button,.iconbtn):active{transform:scale(.97)}
+.dv32 :is(.restaurant-card,.choice,.choice-grid>a,.welcome-panel,.hero-market,.hero-market-card,.welcome-product-card,.drawer-item,.cart-drawer,.intro-panel,.floating-note){border-radius:24px}
+.dv32 :is(input,select,textarea){border-radius:16px}
+.dv32 :is(.restaurant-card,.choice,.hero-market-card,.welcome-product-card){transition:transform .24s ease,box-shadow .24s ease}
+.dv32 :is(.restaurant-card,.choice,.hero-market-card,.welcome-product-card):hover{transform:translateY(-3px);box-shadow:0 14px 34px #0d203020}
+@media(max-width:900px){
+ .dv32 .topbar{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+ .dv32 .mobile-nav{background:color-mix(in srgb,var(--surface) 89%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:24px 24px 0 0;box-shadow:0 -8px 28px #15253a12}
+ .dv32 .hero-market{border-radius:28px}
+ .dv32 .hero-market-card{border-radius:20px}
+ .dv32 .hero-actions .primary,.dv32 .hero-actions .secondary{border-radius:20px}
+}
+@media(prefers-reduced-motion:reduce){.dv32 :is(.primary,.secondary,.cart-button,.iconbtn,.restaurant-card,.choice,.hero-market-card,.welcome-product-card){transition:none!important}}
