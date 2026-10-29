@@ -36,3 +36,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .mobile-nav{box-shadow:0 -8px 28px rgba(0,0,0,.045);padding-bottom:max(5px,env(safe-area-inset-bottom))}
 }
 @media(prefers-reduced-motion:reduce){.restaurant-card:hover,.choice:hover,.hero-art:hover img{transform:none}}
+
+/* Firma de marca Nexora Systems */
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.nexora-signature{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.nexora-powered{font-size:11px;letter-spacing:.01em;color:var(--muted)}
+.nexora-brand{display:inline-flex;align-items:center;gap:2px}
+.nexora-mark{width:43px;height:38px;flex-shrink:0}
+.nexora-wordmark{display:flex;flex-direction:column;line-height:1}
+.nexora-wordmark strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:900;letter-spacing:-.075em;color:var(--ink)}
+.nexora-wordmark small{font-size:9px;font-weight:700;letter-spacing:.33em;color:var(--muted);margin-top:4px}
+@media(max-width:760px){.footer-bottom{justify-content:center;text-align:center;gap:12px}.nexora-signature{justify-content:center}}
