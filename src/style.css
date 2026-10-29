@@ -234,3 +234,46 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .dv32 .hero-actions .primary,.dv32 .hero-actions .secondary{border-radius:20px}
 }
 @media(prefers-reduced-motion:reduce){.dv32 :is(.primary,.secondary,.cart-button,.iconbtn,.restaurant-card,.choice,.hero-market-card,.welcome-product-card){transition:none!important}}
+
+
+/* Dvolada 3.3 — floating pill navigation + warmer, colorful customer home */
+@media(max-width:760px){
+ .dv32:not(.dv-welcome-mode) .topbar{
+  position:sticky!important;top:12px!important;z-index:90!important;
+  width:calc(100% - 28px)!important;max-width:680px!important;
+  height:72px!important;margin:12px auto 16px!important;
+  border:1px solid rgba(255,255,255,.72)!important;
+  border-radius:26px!important;
+  background:color-mix(in srgb,var(--surface) 86%,transparent)!important;
+  box-shadow:0 12px 32px rgba(12,26,48,.13),inset 0 1px 0 rgba(255,255,255,.7)!important;
+  backdrop-filter:blur(22px) saturate(145%)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(145%)!important;
+ }
+ .dv32 .topbar .header-inner{padding:0 16px!important;gap:12px!important}
+ .dv32 .topbar .brand{width:145px;min-width:0}
+ .dv32 .topbar .brand img{max-width:100%;height:50px}
+ .dv32:not(.dv-welcome-mode) .mobile-nav{
+  position:fixed!important;left:12px!important;right:12px!important;
+  bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;
+  width:auto!important;max-width:680px!important;
+  margin:0 auto!important;transform:none!important;
+  padding:10px 6px!important;
+  border:1px solid rgba(255,255,255,.65)!important;
+  border-radius:28px!important;
+  background:color-mix(in srgb,var(--surface) 84%,transparent)!important;
+  box-shadow:0 12px 40px rgba(11,25,48,.19),inset 0 1px 0 rgba(255,255,255,.7)!important;
+  backdrop-filter:blur(24px) saturate(150%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(150%)!important;
+ }
+ .dv32:not(.dv-welcome-mode) .mobile-nav button{min-width:0;border-radius:17px!important;padding:7px 2px!important}
+ .dv32:not(.dv-welcome-mode) .mobile-nav button.active{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+ .dv32:not(.dv-welcome-mode) main{padding-bottom:105px!important}
+ .dv32 .hero{background:radial-gradient(ellipse at 92% 0%,rgba(255,155,68,.18),transparent 53%),radial-gradient(ellipse at 0% 65%,rgba(255,199,107,.12),transparent 50%);border-radius:30px}
+ .dv32 .hero-market{background:radial-gradient(circle at 100% 0%,rgba(255,133,49,.38),transparent 48%),linear-gradient(145deg,#0f2341,#244361 72%,#1e354c)!important;border:1px solid rgba(255,168,95,.2)!important;box-shadow:0 16px 34px rgba(18,43,72,.14)}
+ .dv32 .hero-market-heading span{color:#ffb56d!important}
+ .dv32 .hero-market-card{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.22)!important}
+ .dv32 .hero-market .floating-note{background:rgba(255,162,78,.19)!important;border-color:rgba(255,186,125,.4)!important}
+ .dv32 .hero-copy h1{background:linear-gradient(125deg,var(--ink) 50%,#ef7032 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+@media(max-width:370px){.dv32 .topbar .brand{width:118px}.dv32 .topbar .header-inner{padding:0 10px!important}.dv32:not(.dv-welcome-mode) .mobile-nav{left:8px!important;right:8px!important}}
+@media(prefers-reduced-transparency:reduce){.dv32 .topbar,.dv32 .mobile-nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:var(--surface)!important}}
