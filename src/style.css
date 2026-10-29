@@ -277,3 +277,49 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 @media(max-width:370px){.dv32 .topbar .brand{width:118px}.dv32 .topbar .header-inner{padding:0 10px!important}.dv32:not(.dv-welcome-mode) .mobile-nav{left:8px!important;right:8px!important}}
 @media(prefers-reduced-transparency:reduce){.dv32 .topbar,.dv32 .mobile-nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:var(--surface)!important}}
+
+
+/* Mobile customer login welcome — vivid Dvolada branding, no marketplace or videos */
+@media(max-width:900px){
+ .dv32.dv-welcome-mode{
+  background:radial-gradient(ellipse at 90% 10%,rgba(255,132,45,.28) 0%,transparent 48%),
+             radial-gradient(ellipse at 0% 85%,rgba(255,187,70,.24) 0%,transparent 55%),
+             linear-gradient(155deg,#fff9f0 0%,#fff 42%,#f2f7ff 100%)!important;
+ }
+ .dv32.dv-welcome-mode .welcome-screen{background:transparent!important;overflow:hidden;position:relative}
+ .dv32.dv-welcome-mode .welcome-screen:before{
+  content:"";position:absolute;top:-105px;right:-115px;width:310px;height:310px;
+  border-radius:50%;background:linear-gradient(145deg,rgba(255,162,58,.34),rgba(244,89,38,.14));
+  filter:blur(16px);pointer-events:none
+ }
+ .dv32.dv-welcome-mode .welcome-screen:after{
+  content:"";position:absolute;bottom:-135px;left:-120px;width:330px;height:330px;
+  border-radius:50%;background:linear-gradient(140deg,rgba(255,175,50,.28),rgba(31,103,162,.13));
+  filter:blur(20px);pointer-events:none
+ }
+ .dv32.dv-welcome-mode .welcome-panel{position:relative;z-index:1;background:transparent!important}
+ .dv32.dv-welcome-mode .welcome-panel>img{
+  width:min(84vw,330px)!important;filter:drop-shadow(0 12px 22px rgba(244,112,41,.13));
+  animation:dv-logo-appear .65s ease-out both
+ }
+ .dv32.dv-welcome-mode .welcome-actions{max-width:390px;gap:14px!important}
+ .dv32.dv-welcome-mode .welcome-actions .primary{
+  border-radius:23px!important;
+  background:linear-gradient(110deg,#f3652c,#ff9b35)!important;
+  box-shadow:0 13px 28px rgba(242,103,45,.27)!important;color:#fff!important;
+  min-height:55px
+ }
+ .dv32.dv-welcome-mode .welcome-actions .secondary{
+  border-radius:23px!important;min-height:55px;
+  background:rgba(255,255,255,.74)!important;
+  border:1px solid rgba(246,125,50,.34)!important;
+  box-shadow:0 8px 24px rgba(26,57,91,.08)!important;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)
+ }
+ .dv32.dv-welcome-mode .welcome-actions .welcome-guest{
+  border-radius:20px!important;padding:14px!important;
+  background:rgba(255,255,255,.45)!important;color:#34455b!important
+ }
+}
+@keyframes dv-logo-appear{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.dv32.dv-welcome-mode .welcome-panel>img{animation:none}}
