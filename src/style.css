@@ -323,3 +323,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 @keyframes dv-logo-appear{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.dv32.dv-welcome-mode .welcome-panel>img{animation:none}}
+
+
+/* Welcome branding: dark-mode toggle at upper left and official Nexora below buttons */
+.welcome-theme-toggle{position:absolute;top:22px;left:22px;z-index:3;display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--line);border-radius:17px;background:var(--surface);color:var(--ink);box-shadow:0 6px 18px #10203414;cursor:pointer}
+.welcome-theme-toggle:active{transform:scale(.96)}
+.welcome-nexora-mobile{display:none}
+@media(max-width:900px){
+ .dv32.dv-welcome-mode .welcome-panel{position:relative;isolation:isolate}
+ .dv32.dv-welcome-mode .welcome-theme-toggle{position:absolute!important;top:calc(20px + env(safe-area-inset-top,0px));left:22px;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:18px}
+ .dv32.dv-welcome-mode .welcome-nexora-mobile{display:flex!important;align-items:center;justify-content:center;width:100%;margin-top:22px;padding-bottom:6px}
+ .dv32.dv-welcome-mode .welcome-nexora-mobile img{display:block;width:min(55vw,215px);height:auto;max-height:92px;object-fit:contain;filter:drop-shadow(0 3px 8px #10203412)}
+ [data-theme="dark"] .dv32.dv-welcome-mode{background:radial-gradient(ellipse at 90% 8%,rgba(246,104,37,.24),transparent 46%),radial-gradient(ellipse at 0% 92%,rgba(255,155,46,.12),transparent 53%),linear-gradient(155deg,#101c2b,#14243a 55%,#0c1728)!important}
+ [data-theme="dark"] .dv32.dv-welcome-mode .welcome-screen{background:transparent!important}
+ [data-theme="dark"] .dv32.dv-welcome-mode .welcome-actions .secondary{background:rgba(255,255,255,.11)!important;color:#fff!important;border-color:rgba(255,255,255,.22)!important}
+ [data-theme="dark"] .dv32.dv-welcome-mode .welcome-actions .welcome-guest{background:rgba(255,255,255,.08)!important;color:#f1f4fa!important}
+ [data-theme="dark"] .dv32.dv-welcome-mode .welcome-theme-toggle{background:rgba(255,255,255,.12)!important;color:#fff!important;border-color:rgba(255,255,255,.22)!important}
+ [data-theme="dark"] .dv32.dv-welcome-mode .welcome-nexora-mobile img{filter:drop-shadow(0 3px 8px rgba(0,0,0,.25))}
+}
