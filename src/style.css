@@ -198,3 +198,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   .welcome-screen .welcome-actions{width:100%;display:flex;flex-direction:column;gap:12px}
   .welcome-screen .welcome-actions button{width:100%}
 }
+
+
+/* Mobile-only welcome: no marketplace, navigation, footer, or Nexora block. */
+@media(max-width:900px){
+ .dv-welcome-mode>.topbar,.dv-welcome-mode>.dv-sidebar,.dv-welcome-mode>.mobile-nav,.dv-welcome-mode>footer,.dv-welcome-mode .footer-bottom{display:none!important}
+ .dv-welcome-mode{min-height:100dvh;background:var(--surface,#fff)}
+ .dv-welcome-mode main{margin:0!important;padding:0!important;min-height:100dvh;width:100%!important;max-width:none!important}
+ .dv-welcome-mode .welcome-screen{min-height:100dvh!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important}
+ .dv-welcome-mode .welcome-showcase{display:none!important}
+ .dv-welcome-mode .welcome-panel{flex:1;min-height:100dvh!important;max-width:440px!important;padding:32px 24px!important;gap:15px!important}
+ .dv-welcome-mode .welcome-panel>img{width:min(84vw,320px)!important;max-height:none!important;object-position:center!important;margin:0 auto 26px!important}
+ .dv-welcome-mode .welcome-panel>.welcome-nexora,.dv-welcome-mode .welcome-panel>.kicker,.dv-welcome-mode .welcome-panel>h1,.dv-welcome-mode .welcome-panel>p,.dv-welcome-mode .welcome-panel>.welcome-affiliates,.dv-welcome-mode .welcome-panel>small{display:none!important}
+ .dv-welcome-mode .welcome-actions{margin-top:0!important}
+}
