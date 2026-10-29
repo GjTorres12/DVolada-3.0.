@@ -409,3 +409,27 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-history-locked>svg{color:var(--accent)}.dv-history-locked h2{margin:0}.dv-history-locked p{max-width:470px;line-height:1.6;color:var(--muted)}
 .dv-history-locked button{display:inline-flex;align-items:center;gap:9px;justify-content:center;border-radius:18px;min-height:46px}
 @media(max-width:380px){.dv-orders-tabs button{font-size:12px;padding:12px 6px}}
+
+
+/* Branding polish: original D artwork cropped from the original logo, not recreated */
+.dv-brand-mark{display:none}
+@media(max-width:760px){
+ .dv32:not(.dv-welcome-mode) .topbar .brand{width:72px!important;min-width:72px!important;height:56px;display:flex;align-items:center;overflow:visible}
+ .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-full{display:none!important}
+ .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-mark{display:block!important;position:relative;width:69px;height:53px;overflow:hidden;border-radius:11px;flex-shrink:0}
+ .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-mark img{position:absolute!important;max-width:none!important;width:213px!important;height:auto!important;max-height:none!important;left:-5px;top:50%;transform:translateY(-50%);object-fit:initial!important}
+ .dv32:not(.dv-welcome-mode) .topbar .header-inner{justify-content:space-between!important}
+ /* Prevent fixed dock and floating actions from covering footer content */
+ .dv32 footer{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px))}
+ .dv32 .mobile-cart-cta{bottom:calc(106px + env(safe-area-inset-bottom,0px))!important;z-index:76!important}
+ .dv32 .dv-chat-fab{bottom:calc(181px + env(safe-area-inset-bottom,0px))!important;z-index:79!important}
+ .dv32 .dv-chat-panel{bottom:calc(110px + env(safe-area-inset-bottom,0px))!important}
+}
+/* Footer: warm light brand surface so the logo's white image background blends naturally */
+.dv32 footer{background:#f8f6f2!important;color:#242322!important;border-top:1px solid #e7e1d8}
+.dv32 footer .footer-inner img:not(.dv-nexora-footer-logo){background:transparent!important;padding:0!important;border-radius:0!important;mix-blend-mode:multiply}
+.dv32 footer .footer-inner p,.dv32 footer .footer-inner small{color:#68635e!important}
+.dv32 footer .footer-inner button{color:#625d58!important}
+.dv32 footer .footer-inner button:hover{color:#ed632f!important}
+.dv32 footer .footer-bottom{border-top-color:#ded8d0!important;color:#77716b!important}
+@media(prefers-color-scheme:dark){.dv32 footer{background:#f8f6f2!important;color:#242322!important}}
