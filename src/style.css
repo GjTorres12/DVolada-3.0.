@@ -155,3 +155,28 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Logo oficial Nexora Systems: conservar imagen original sin recrear */
 .nexora-signature{max-width:100%;min-width:0;white-space:normal}.nexora-official-logo{display:block;width:clamp(180px,25vw,310px);height:auto;max-width:100%;object-fit:contain}.footer-bottom{align-items:center}@media(max-width:760px){.nexora-official-logo{width:min(78vw,290px)}.nexora-signature{margin-inline:auto}}
+
+
+/* Dvolada 3.3 — customer-first responsive storefront */
+@media(min-width:901px){.dv32 .dv-sidebar{display:none!important}.dv32 .desktop-nav{display:flex!important}.dv32 .topbar{position:sticky;top:0;z-index:90}.dv32 main{margin-left:0!important;width:100%!important}.dv32 .app-content{margin-left:0!important}.dv32 .header-inner{max-width:1320px}}
+.welcome-screen{overflow:hidden}
+.welcome-showcase{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px;background:radial-gradient(circle at 85% 15%,#f87735 0%,transparent 36%),linear-gradient(135deg,#08182c 0%,#122b48 65%,#2a3548 100%);color:white;padding:42px;overflow:hidden}
+.welcome-showcase:before{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff22;border-radius:50%;left:-200px;bottom:-220px}
+.welcome-showcase-content{position:relative;z-index:1;max-width:620px;width:100%;animation:dv-rise .7s ease both}
+.welcome-kicker{color:#ffbd87;letter-spacing:.2em;font-size:12px;font-weight:800}
+.welcome-showcase h2{font-size:clamp(32px,4vw,60px);line-height:1.07;letter-spacing:-.04em;margin:20px 0 12px;color:#fff}
+.welcome-showcase h2 em{color:#ff9c55;font-style:normal}.welcome-showcase p{color:#dce4ed;max-width:450px}
+.welcome-product-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:26px 0}
+.welcome-product-card,.hero-market-card{border:1px solid #ffffff30;border-radius:16px;overflow:hidden;background:#ffffff14;color:#fff;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.welcome-product-card:hover,.hero-market-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px #0003}
+.welcome-product-card img{width:100%;height:112px;object-fit:cover;display:block}.welcome-product-card span{display:block;padding:9px 12px;font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.welcome-explore{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:30px;padding:12px 20px;background:#ff8b3d;color:#152030;font-weight:800;cursor:pointer}
+.welcome-panel{position:relative}.welcome-nexora{display:flex;justify-content:center;margin:0 0 12px}.welcome-nexora img{display:block;object-fit:contain;width:min(220px,62%);height:auto}
+.hero-market{background:linear-gradient(145deg,#101f35,#27394d);padding:22px;border-radius:25px;min-height:360px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:15px}
+.hero-market-heading{display:flex;flex-direction:column;gap:5px}.hero-market-heading span{color:#ffb578;font-size:11px;font-weight:800;letter-spacing:.14em}.hero-market-heading strong{font-size:23px}
+.hero-market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.hero-market-card img{display:block;width:100%;height:118px;object-fit:cover}.hero-market-card span{display:block;padding:9px;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-market .floating-note{position:static;align-self:flex-start}
+@keyframes dv-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.welcome-showcase{min-height:auto;padding:25px 20px}.welcome-showcase h2{font-size:30px}.welcome-product-strip{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.welcome-product-card img{height:72px}.welcome-product-card span{font-size:10px;padding:6px}.welcome-showcase p{font-size:13px}.hero-market{min-height:auto}.hero-market-card img{height:95px}}
+@media(max-width:480px){.welcome-product-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome-product-card img{height:82px}.welcome-showcase{padding:22px 18px}.welcome-nexora img{width:160px}}
+@media(prefers-reduced-motion:reduce){.welcome-showcase-content{animation:none}.welcome-product-card,.hero-market-card{transition:none}}
