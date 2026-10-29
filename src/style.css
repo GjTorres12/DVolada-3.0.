@@ -367,3 +367,19 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .dv32 .order-list>.order p{overflow-wrap:anywhere}
 }
 @media(max-width:370px){.dv32 .order-list>.order{padding:16px 12px!important}.dv32 .order-timeline{gap:12px 3px}}
+
+
+/* Customer support per order — accessible and mobile friendly */
+.dv-support-actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.dv-support-actions button{display:inline-flex;align-items:center;gap:8px;border-radius:18px;min-height:44px}
+.dv-support-modal{max-width:530px;width:calc(100vw - 28px);max-height:88dvh;overflow-y:auto;box-sizing:border-box;border-radius:26px}
+.dv-support-modal label{display:block;margin:14px 0 7px;font-weight:700}
+.dv-support-modal select,.dv-support-modal textarea{display:block;width:100%;max-width:100%;box-sizing:border-box;border-radius:15px;padding:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.dv-support-modal .primary{margin:18px 0 10px}
+.dv-support-modal small{display:block;color:var(--muted);line-height:1.5}
+.dv-support-contact{padding:14px;border:1px solid var(--line);background:var(--soft);border-radius:19px;margin:14px 0}
+.dv-support-contact p{font-size:13px;color:var(--muted);line-height:1.5}
+.dv-support-contact a{display:inline-flex;justify-content:center;max-width:100%;box-sizing:border-box;text-decoration:none;white-space:normal}
+.dv-support-history{border-top:1px solid var(--line);margin-top:18px;padding-top:14px}
+.dv-support-history p{overflow-wrap:anywhere;font-size:12px}
+@media(max-width:760px){.dv-support-actions{display:grid;grid-template-columns:1fr}.dv-support-actions button{width:100%;justify-content:center}.dv-support-modal{padding:18px!important}}
