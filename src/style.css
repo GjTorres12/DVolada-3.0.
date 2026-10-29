@@ -433,3 +433,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv32 footer .footer-inner button:hover{color:#ed632f!important}
 .dv32 footer .footer-bottom{border-top-color:#ded8d0!important;color:#77716b!important}
 @media(prefers-color-scheme:dark){.dv32 footer{background:#f8f6f2!important;color:#242322!important}}
+
+
+/* Restore complete original Dvolada logo in mobile header */
+@media(max-width:760px){
+ .dv32:not(.dv-welcome-mode) .topbar .brand{width:145px!important;min-width:0!important;max-width:48%!important;height:auto!important;overflow:visible!important}
+ .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-full{display:block!important;max-width:100%!important;width:145px!important;height:auto!important;max-height:52px!important;object-fit:contain!important}
+ .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-mark{display:none!important}
+}
