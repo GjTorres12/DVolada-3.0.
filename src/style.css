@@ -128,3 +128,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 @media(min-width:761px){.dv32:has(.welcome-screen) .dv-sidebar{display:none}.dv32:has(.welcome-screen) .topbar,.dv32:has(.welcome-screen) main,.dv32:has(.welcome-screen) footer{margin-left:0}}
 .dv32:has(.welcome-screen) .topbar,.dv32:has(.welcome-screen) .mobile-nav,.dv32:has(.welcome-screen) .mobile-cart-cta{display:none}
 .dv32:has(.welcome-screen) .welcome-screen{min-height:100svh}
+
+/* D Volada 3.2 — navegación inferior unificada para escritorio y móvil */
+@media(min-width:761px){
+ .dv32,.dv32.sidebar-pinned{--sidebar-width:0px}
+ .dv32 .dv-sidebar,.dv32 .desktop-nav{display:none!important}
+ .dv32 .topbar,.dv32 main,.dv32 footer{margin-left:0!important}
+ .dv32 .mobile-nav{display:flex!important;position:fixed;bottom:16px;left:50%;right:auto;transform:translateX(-50%);width:min(680px,calc(100% - 48px));z-index:100;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:10px 16px;box-shadow:0 12px 45px rgba(0,0,0,.12);justify-content:space-around}
+ .dv32 .mobile-nav button{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+ .dv32 footer{padding-bottom:105px}
+}
+@media(max-width:760px){.dv32 .dv-sidebar{display:none!important}}
+.dv32:has(.welcome-screen) .mobile-nav{display:none!important}
