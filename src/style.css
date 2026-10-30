@@ -466,3 +466,26 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-partner-login input:disabled{opacity:.7}
 .dv-partner-login .wide{width:100%;justify-content:center}
 .dv-partner-login .disclaimer{font-size:13px;line-height:1.5}
+
+/* Dvolada Socios: editorial visual language */
+.dv-partner-hub{max-width:1150px}
+.dv-partner-hero{background:#172521;color:#f4f0e6;border-radius:9px 34px 9px 34px;padding:clamp(25px,5vw,58px);display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;overflow:hidden}
+.dv-partner-hero:after{content:'';position:absolute;width:340px;height:340px;border:1px solid #ffffff26;border-radius:50%;right:-100px;top:-150px;pointer-events:none}
+.dv-partner-hero .kicker{color:#d7af7d;letter-spacing:.18em}
+.dv-partner-hero h1{font-family:Georgia,serif;font-size:clamp(37px,6vw,76px);font-weight:500;letter-spacing:-.055em;line-height:1.03;margin:16px 0;max-width:700px}
+.dv-partner-hero p{color:#d0d7d1;max-width:520px}
+.dv-partner-monogram{font-family:Georgia,serif;font-size:clamp(65px,12vw,150px);color:#d9b482;line-height:1;flex-shrink:0}
+.dv-partner-monogram span{font-family:Arial,sans-serif;font-size:.38em;vertical-align:top}
+.dv-partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.dv-partner-tile{appearance:none;border:1px solid #e0d5c5;border-radius:9px 28px 9px 28px;padding:clamp(24px,4vw,42px);text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:17px;min-height:340px;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.dv-partner-tile:hover{transform:translateY(-3px);box-shadow:0 16px 40px #0002}
+.dv-partner-tile.online{background:#eee6d8;color:#25352d}
+.dv-partner-tile.plus{background:#b95130;color:#fff4e8;border-color:#b95130}
+.dv-tile-number{font-size:11px;letter-spacing:.18em;font-weight:800}
+.dv-partner-tile h2{font-family:Georgia,serif;font-size:clamp(27px,3vw,42px);font-weight:500;letter-spacing:-.03em;margin:0}
+.dv-partner-tile p{font-size:15px;line-height:1.55;max-width:350px;margin:0}
+.dv-tile-action{display:flex;align-items:center;gap:10px;margin-top:auto;font-weight:800}
+.dv-partner-pos{margin:20px 0;padding:25px;border-radius:18px}
+.dv-partner-pos form{display:grid;gap:12px;max-width:480px;margin:20px 0 30px}
+.dv-partner-pos input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+@media(max-width:680px){.dv-partner-grid{grid-template-columns:1fr}.dv-partner-tile{min-height:280px}.dv-partner-monogram{font-size:66px}.dv-partner-hero{align-items:flex-start}}
