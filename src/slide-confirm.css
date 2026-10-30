@@ -26,3 +26,11 @@
 .dv-slide-logo .dv-slide-d-image{width:59px!important;height:52px!important;max-width:calc(100% - 6px)!important;max-height:calc(100% - 6px)!important;position:static!important;object-fit:contain!important;filter:none!important;clip-path:none!important}
 .dv-slide-fill{border-radius:23px!important}
 @media(max-width:390px){.dv-slide-knob{width:62px!important;height:62px!important}.dv-slide-logo .dv-slide-d-image{width:54px!important;height:47px!important}}
+
+/* Final slider cleanup: only the white D mark, with NO orange square behind it. */
+.dv-slide-knob,.dv-slide-track .dv-slide-knob{background:transparent!important;border:0!important;box-shadow:none!important;outline:0!important;overflow:visible!important;border-radius:0!important}
+.dv-slide-logo,.dv-slide-track .dv-slide-logo{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+.dv-slide-logo .dv-slide-d-image{width:64px!important;height:55px!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;filter:drop-shadow(0 2px 3px #0005)!important;clip-path:none!important}
+.dv-slide-fill{background:linear-gradient(100deg,#205a40,#1b6746)!important}
+.dv-slide-track{background:#164331!important}
+@media(max-width:390px){.dv-slide-logo .dv-slide-d-image{width:57px!important;height:49px!important}}
