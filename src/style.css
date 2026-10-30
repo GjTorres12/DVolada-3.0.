@@ -592,3 +592,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-animated-toast{animation:dv-toast-float .28s cubic-bezier(.2,1,.3,1) both!important}
 @keyframes dv-toast-float{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.restaurant-card-wrap,.menu-item,.dv-cart-fly,.dv-order-celebration,.dv-celebration-icon,.dv-celebration-rider,.dv-delivery-rider svg,.dv-animated-toast{animation:none!important;transition:none!important}.dv-cart-fly{display:none!important}}
+
+/* Compact lightning-only Flash shortcut */
+.dv-flash-fab{width:48px!important;height:48px!important;border-radius:50%!important;right:17px!important;bottom:calc(92px + env(safe-area-inset-bottom))!important;border:1.5px solid #fff9!important;gap:0!important;background:linear-gradient(145deg,#ffae39,#f66b2b)!important;box-shadow:0 5px 17px #ed7a3470!important}
+.dv-flash-fab::before{inset:-4px!important;border-radius:50%!important}
+.dv-flash-fab::after{inset:5px!important;border-radius:50%!important}
+.dv-flash-fab svg{width:27px;height:27px;filter:drop-shadow(0 0 5px #fff9)}
+@media(max-width:480px){.dv-flash-fab{width:46px!important;height:46px!important;right:14px!important;bottom:calc(94px + env(safe-area-inset-bottom))!important}}
