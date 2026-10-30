@@ -8,3 +8,9 @@
 .dv-slide-logo{overflow:hidden;border-radius:16px;position:relative}
 .dv-slide-logo .dv-slide-d-image{display:block!important;position:absolute;max-width:none!important;max-height:none!important;width:105px!important;height:62px!important;object-fit:fill!important;left:-8px;top:1px;pointer-events:none;user-select:none;clip-path:polygon(0 0,100% 0,100% 63%,73% 63%,68% 100%,0 100%)}
 @media(max-width:390px){.dv-slide-logo .dv-slide-d-image{width:96px!important;height:57px!important;left:-8px;top:2px}}
+
+/* Branded slider thumb: orange tile, white D-and-courier silhouette */
+.dv-slide-knob{background:linear-gradient(145deg,#ff9b39 0%,#f26732 70%,#e84b25 100%)!important;border:2px solid #ffc18b!important;box-shadow:0 4px 13px #0004, inset 0 1px 0 #ffffff50!important}
+.dv-slide-logo{background:transparent!important;overflow:hidden!important}
+.dv-slide-logo .dv-slide-d-image{width:112px!important;height:65px!important;max-width:none!important;max-height:none!important;object-fit:fill!important;left:-8px!important;top:1px!important;filter:brightness(0) invert(1)!important;clip-path:polygon(0 0,100% 0,100% 58%,70% 58%,70% 100%,0 100%)!important}
+@media(max-width:390px){.dv-slide-logo .dv-slide-d-image{width:104px!important;height:61px!important;left:-8px!important;top:0!important}}
