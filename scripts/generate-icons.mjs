@@ -23,12 +23,12 @@ const crop={left:Math.max(0,minX-2),top:Math.max(0,minY-2),width:Math.min(width-
 const mark=await sharp(rgba,{raw:{width,height,channels:4}}).extract(crop).png().toBuffer();
 await mkdir('public',{recursive:true});
 for(const size of [192,512]){
- const pad=Math.round(size*.10),inner=size-pad*2;
+ const pad=Math.round(size*.075),inner=size-pad*2;
  const background=Buffer.from(`<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="warm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.52" stop-color="#fffaf4"/><stop offset="1" stop-color="#ffd4a7"/></linearGradient><radialGradient id="glow" cx="0.96" cy="0.97" r="0.85"><stop offset="0" stop-color="#ff923e" stop-opacity="0.48"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(#warm)"/><rect width="100%" height="100%" fill="url(#glow)"/></svg>`);
- const artwork=await sharp(mark).resize(inner,inner,{fit:'contain',background:'#fff9f4'}).png().toBuffer();
+ const artwork=await sharp(mark).resize(inner,inner,{fit:'contain',background:{r:0,g:0,b:0,alpha:0}}).png().toBuffer();
  const a=await sharp(artwork).metadata();
  await sharp(background)
   .composite([{input:artwork,left:Math.floor((size-a.width)/2),top:Math.floor((size-a.height)/2)}])
-  .png().toFile('public/icon-gradient-'+size+'.png');
+  .png().toFile('public/icon-smooth-'+size+'.png');
  console.log('Dvolada icon '+size+'x'+size+': orange symbol only');
 }
