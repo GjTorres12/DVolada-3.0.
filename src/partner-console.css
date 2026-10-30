@@ -16,3 +16,5 @@
 @keyframes pc-kitchen-pulse{0%,100%{box-shadow:0 7px 22px #14281d0b}50%{box-shadow:0 0 0 3px #4fbc7540,0 9px 26px #14281d19}}
 @keyframes pc-alert-slide{from{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.pc-kitchen-order,.pc-kitchen-order.is-new,.pc-kitchen-order .pc-kitchen-next,.pc-kitchen-alert{animation:none!important;transition:none!important}}
+
+.pc-kitchen-audio{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.pc-kitchen-audio label{font-size:12px;display:flex;align-items:center;gap:5px}.pc-kitchen-audio select{border:1px solid #8886;border-radius:8px;padding:6px;background:var(--surface,#242424);color:inherit}.pc-kitchen-audio input[type=range]{width:80px;accent-color:#f57934}
