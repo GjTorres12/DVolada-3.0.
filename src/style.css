@@ -441,3 +441,19 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-full{display:block!important;max-width:100%!important;width:145px!important;height:auto!important;max-height:52px!important;object-fit:contain!important}
  .dv32:not(.dv-welcome-mode) .topbar .brand .dv-brand-mark{display:none!important}
 }
+
+/* Dvolada: weekly restaurant commissions (demo) */
+.dv-fees{padding:22px;margin:20px 0;border-radius:18px}
+.dv-fees h2{margin:0 0 8px}
+.dv-fees>p{color:var(--muted);line-height:1.55}
+.dv-fees>select{display:block;max-width:360px;width:100%;margin:8px 0 15px;padding:11px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink)}
+.dv-fee-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.dv-fee-stats>div{display:flex;flex-direction:column;gap:7px;padding:16px;background:var(--bg);border:1px solid var(--line);border-radius:14px}
+.dv-fee-stats span,.dv-fee-line small{color:var(--muted);font-size:12px}
+.dv-fee-stats strong{font-size:23px}
+.dv-fee-line{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+.dv-fee-line>div:first-child{display:flex;flex-direction:column;gap:6px;min-width:0}
+.dv-fee-line small{overflow-wrap:anywhere}
+.dv-fee-actions{display:flex;align-items:flex-end;flex-direction:column;gap:9px}
+.dv-fee-actions button{white-space:nowrap}
+@media(max-width:550px){.dv-fees{padding:15px}.dv-fee-line{align-items:flex-start;flex-direction:column}.dv-fee-actions{align-items:center;flex-direction:row;width:100%;justify-content:space-between}.dv-fee-stats strong{font-size:19px}}
