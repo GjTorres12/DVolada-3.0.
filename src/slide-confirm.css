@@ -14,3 +14,8 @@
 .dv-slide-logo{background:transparent!important;overflow:hidden!important}
 .dv-slide-logo .dv-slide-d-image{width:112px!important;height:65px!important;max-width:none!important;max-height:none!important;object-fit:fill!important;left:-8px!important;top:1px!important;filter:brightness(0) invert(1)!important;clip-path:polygon(0 0,100% 0,100% 58%,70% 58%,70% 100%,0 100%)!important}
 @media(max-width:390px){.dv-slide-logo .dv-slide-d-image{width:104px!important;height:61px!important;left:-8px!important;top:0!important}}
+
+/* Dedicated white logo from user reference; no clipping or color filters */
+.dv-slide-logo .dv-slide-d-image{position:static!important;display:block!important;width:60px!important;height:52px!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;clip-path:none!important;filter:none!important;transform:none!important}
+.dv-slide-knob{background:linear-gradient(135deg,#ff9738,#f26a2d)!important}
+@media(max-width:390px){.dv-slide-logo .dv-slide-d-image{width:54px!important;height:47px!important}}
