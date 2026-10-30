@@ -564,3 +564,31 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 @keyframes dv-flash-bolt{0%,16%,34%,100%{transform:scale(1) rotate(0)}20%{transform:scale(1.18) rotate(-9deg)}24%{transform:scale(1.08) rotate(6deg)}29%{transform:scale(1.2) rotate(-5deg)}}
 @keyframes dv-flash-sweep{0%,15%,45%,100%{opacity:0;transform:translateX(-80%)}20%{opacity:.65}32%{opacity:.45;transform:translateX(80%)}}
 @media(prefers-reduced-motion:reduce){.dv-flash-fab,.dv-flash-fab::before,.dv-flash-fab::after,.dv-flash-fab svg{animation:none!important}.dv-flash-fab::before,.dv-flash-fab::after{display:none}}
+
+/* Motion system: fast, GPU-friendly and reduced-motion aware */
+.restaurant-card-wrap{animation:dv-card-enter .42s cubic-bezier(.2,.75,.25,1) both;transition:transform .22s ease,filter .22s ease}
+.restaurant-card-wrap:nth-child(3n + 2){animation-delay:.055s}
+.restaurant-card-wrap:nth-child(3n){animation-delay:.11s}
+.restaurant-card-wrap:active{transform:scale(.98)}
+.menu-item{animation:dv-card-enter .26s ease both}
+@keyframes dv-card-enter{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+.dv-cart-fly{position:fixed;z-index:11000;left:var(--fly-x);top:var(--fly-y);width:37px;height:37px;border-radius:50%;background:#ff783b;color:white;display:grid;place-items:center;pointer-events:none;box-shadow:0 0 20px #ff9e43;animation:dv-fly-to-cart .72s cubic-bezier(.2,.55,.2,1) forwards}
+@keyframes dv-fly-to-cart{0%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}45%{opacity:1;transform:translate(calc(-50% + var(--fly-dx)*.43),calc(-50% + var(--fly-dy)*.18 - 55px)) scale(.9)}100%{opacity:0;transform:translate(calc(-50% + var(--fly-dx)),calc(-50% + var(--fly-dy))) scale(.25)}}
+.dv-order-celebration{position:fixed;z-index:11001;top:50%;left:50%;transform:translate(-50%,-50%);width:min(86vw,350px);background:var(--surface,#fff);color:var(--ink,#173b2e);border:1px solid #ead6c5;border-radius:26px;box-shadow:0 25px 95px #0007;padding:29px 22px;display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:none;animation:dv-celebrate-in .3s ease both}
+.dv-order-celebration>strong{font:normal 30px Georgia,serif}.dv-order-celebration>span{font-weight:800;color:#f36b32}
+.dv-celebration-icon{width:79px;height:79px;border-radius:50%;background:#1b7a4e;color:white;display:grid;place-items:center;animation:dv-check-bounce .55s cubic-bezier(.3,1.5,.3,1) both}
+.dv-celebration-rider{display:flex;align-items:center;gap:9px;color:#ec6b30;font-weight:900;animation:dv-rider-roll .65s ease .2s both}
+@keyframes dv-celebrate-in{from{opacity:0;transform:translate(-50%,-45%) scale(.9)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes dv-check-bounce{from{transform:scale(.4)}to{transform:scale(1)}}
+@keyframes dv-rider-roll{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+.dv-delivery-rider{display:flex;align-items:center;gap:9px;color:#6c8172;font-size:12px;font-weight:800;margin:8px 0;padding:8px 12px;background:var(--bg,#f4f4ef);border-radius:11px;overflow:hidden}
+.dv-delivery-rider svg{flex-shrink:0}
+.dv-delivery-rider.riding{color:#dd7133}
+.dv-delivery-rider.riding svg{animation:dv-rider-move 2s ease-in-out infinite}
+.dv-delivery-rider.arrived{color:#1c7d4e}
+.dv-delivery-rider.arrived svg{animation:dv-arrival-honk .7s ease 2}
+@keyframes dv-rider-move{0%,100%{transform:translateX(0) rotate(-3deg)}50%{transform:translateX(24px) rotate(4deg)}}
+@keyframes dv-arrival-honk{0%,100%{transform:rotate(0)}30%{transform:rotate(-14deg)}60%{transform:rotate(10deg)}}
+.dv-animated-toast{animation:dv-toast-float .28s cubic-bezier(.2,1,.3,1) both!important}
+@keyframes dv-toast-float{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.restaurant-card-wrap,.menu-item,.dv-cart-fly,.dv-order-celebration,.dv-celebration-icon,.dv-celebration-rider,.dv-delivery-rider svg,.dv-animated-toast{animation:none!important;transition:none!important}.dv-cart-fly{display:none!important}}
