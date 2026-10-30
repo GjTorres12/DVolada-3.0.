@@ -457,3 +457,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-fee-actions{display:flex;align-items:flex-end;flex-direction:column;gap:9px}
 .dv-fee-actions button{white-space:nowrap}
 @media(max-width:550px){.dv-fees{padding:15px}.dv-fee-line{align-items:flex-start;flex-direction:column}.dv-fee-actions{align-items:center;flex-direction:row;width:100%;justify-content:space-between}.dv-fee-stats strong{font-size:19px}}
+
+/* Dvolada Negocios: partner entry */
+.dv-partner-login{padding:26px;display:flex;flex-direction:column;gap:12px;border-radius:22px;max-width:520px;margin:auto}
+.dv-partner-login .dv-partner-logo{display:flex;align-items:center;gap:12px;margin-bottom:8px;color:var(--ink)}
+.dv-partner-login .dv-partner-logo svg{color:var(--accent)}
+.dv-partner-login input{width:100%;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.dv-partner-login input:disabled{opacity:.7}
+.dv-partner-login .wide{width:100%;justify-content:center}
+.dv-partner-login .disclaimer{font-size:13px;line-height:1.5}
