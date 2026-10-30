@@ -1,0 +1,6 @@
+import React,{useEffect,useState} from 'react';
+import './delight.css';
+export function IntroMotion(){const [show,setShow]=useState(()=>!sessionStorage.getItem('dv_intro_seen'));useEffect(()=>{if(!show)return;sessionStorage.setItem('dv_intro_seen','1');const t=setTimeout(()=>setShow(false),1150);return()=>clearTimeout(t)},[show]);if(!show)return null;return <div className="dv-intro-motion" aria-hidden="true"><img src={import.meta.env.BASE_URL+'dvolada-slide-white.svg'}/></div>}
+export function EmptyCartMotion(){return <div className="dv-empty-cart-motion" aria-hidden="true"><span className="dv-empty-cart-bag">🛍️</span><img src={import.meta.env.BASE_URL+'dvolada-slide-white.svg'}/></div>}
+export function RewardCelebration({onDone}){useEffect(()=>{const t=setTimeout(onDone,2300);return()=>clearTimeout(t)},[onDone]);return <div className="dv-reward-celebration" role="status" aria-live="polite"><span>✦ 🎁 ✦</span><strong>¡Recompensa desbloqueada!</strong><small>Cupón de demostración</small></div>}
+export function SkeletonCards(){return <div className="dv-skeleton-grid" aria-label="Cargando contenido">{[0,1,2].map(i=><div className="dv-skeleton-card" key={i}><div/><span/><span/></div>)}</div>}
