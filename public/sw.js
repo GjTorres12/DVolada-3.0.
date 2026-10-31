@@ -1,1 +1,15 @@
-const CACHE='dvolada-shell-v8';const ROOT='/DVolada-3.0./';self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll([ROOT,ROOT+'logo.png',ROOT+'icon-clean-192.png',ROOT+'icon-clean-512.png',ROOT+'manifest.webmanifest'])).catch(()=>{}));self.skipWaiting()});self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dvolada-shell-')&&k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;event.respondWith(fetch(req).catch(()=>caches.match(req).then(r=>r||((req.mode==='navigate')?caches.match(ROOT):undefined))))});
+const CACHE='dvolada-shell-v9';const ROOT='/DVolada-3.0./';
+self.addEventListener('install',event=>{
+ event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll([ROOT+'logo.png',ROOT+'icon-clean-192.png',ROOT+'icon-clean-512.png',ROOT+'manifest.webmanifest'])).catch(()=>{}));
+ // No activar de inmediato: esperar a que el usuario pulse «Actualizar ahora».
+});
+self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING')self.skipWaiting()});
+self.addEventListener('activate',event=>{
+ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dvolada-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
+});
+self.addEventListener('fetch',event=>{
+ const req=event.request;
+ if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;
+ // Network-first; no guardar bundles obsoletos en la caché.
+ event.respondWith(fetch(req).catch(()=>caches.match(req).then(r=>r||(req.mode==='navigate'?caches.match(ROOT):undefined))));
+});
