@@ -3,7 +3,7 @@ import './CourierStatusMotion.css';
 
 // Repartidor SVG integrado en la app: gorra, mochila y caja en una mano.
 export default function CourierStatusMotion({status='En camino'}){
- const walking=['Recogido','En camino','En ubicación'].includes(status);
+ const walking=!['Entregado','Cancelado'].includes(status);
  return <span className={'dv-courier-motion '+(walking?'is-moving':'')} role="img" aria-label={'Repartidor naranja caminando con una caja. Estado: '+status}>
   <svg viewBox="0 0 90 110" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
    <g className="dv-courier-walker">
