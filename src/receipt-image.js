@@ -20,7 +20,7 @@ export async function saveReceiptImage(order,base='/'){
  rect(0,0,w,h,cream);
  // Header: original transparent logo on light background to keep dark lettering legible.
  round(26,24,w-52,205,26,'#ffffff');
- try{const logo=await loadImage(base+'dvolada-logo-original.png');drawLogo(logo,58,37,565,128)}catch{txt('Dvolada',p,112,64,orange,'800')}
+ try{const logo=await loadImage(base+'dvolada-logo-original.png');drawLogo(logo,58,37,565,128)}catch{txt('Comprobante de pedido',p,112,35,orange,'800')}
  txt('TU PEDIDO, A UN TOQUE',p,200,20,dark,'700');
  round(p,258,w-p*2,100,18,dark);
  txt('COMPROBANTE',p+24,299,32,'#fff','800');
