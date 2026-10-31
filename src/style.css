@@ -640,3 +640,23 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   padding-bottom:max(28px,env(safe-area-inset-bottom))!important;
  }
 }
+
+/* Portal afiliado: eliminar toda navegación y elementos exclusivos del cliente. */
+.dv32.dv-affiliate-mode{--sidebar-width:0px!important;min-height:100dvh}
+.dv32.dv-affiliate-mode>.topbar,
+.dv32.dv-affiliate-mode>.dv-sidebar,
+.dv32.dv-affiliate-mode>.mobile-nav,
+.dv32.dv-affiliate-mode>.dv-footer-compact,
+.dv32.dv-affiliate-mode>footer,
+.dv32.dv-affiliate-mode>.mobile-cart-cta,
+.dv32.dv-affiliate-mode>.dv-chat-fab,
+.dv32.dv-affiliate-mode>.dv-flash-fab,
+.dv32.dv-affiliate-mode>.dv-more-panel{display:none!important}
+.dv32.dv-affiliate-mode main{margin:0!important;padding:0!important;width:100%!important;max-width:none!important;min-height:100dvh}
+.dv32.dv-affiliate-mode .ow-shell{max-width:1500px;margin:0 auto!important}
+.dv32.dv-affiliate-mode .ow-brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 0 18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.dv32.dv-affiliate-mode .ow-brandbar img{display:block;width:clamp(125px,22vw,185px);height:60px;object-fit:contain;object-position:left center}
+.dv32.dv-affiliate-mode .ow-brandbar span{font-size:10px;font-weight:800;letter-spacing:.13em;color:var(--accent);text-align:right}
+.dv32.dv-affiliate-mode .ow-nav{display:flex;gap:8px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin;padding-bottom:5px}
+.dv32.dv-affiliate-mode .ow-nav button{white-space:nowrap;flex-shrink:0}
+@media(max-width:760px){.dv32.dv-affiliate-mode .ow-brandbar img{width:130px;height:48px}.dv32.dv-affiliate-mode .ow-brandbar span{font-size:9px;max-width:145px}.dv32.dv-affiliate-mode .ow-nav button{padding:11px;font-size:12px}}
