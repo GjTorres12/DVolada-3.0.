@@ -660,3 +660,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv32.dv-affiliate-mode .ow-nav{display:flex;gap:8px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin;padding-bottom:5px}
 .dv32.dv-affiliate-mode .ow-nav button{white-space:nowrap;flex-shrink:0}
 @media(max-width:760px){.dv32.dv-affiliate-mode .ow-brandbar img{width:130px;height:48px}.dv32.dv-affiliate-mode .ow-brandbar span{font-size:9px;max-width:145px}.dv32.dv-affiliate-mode .ow-nav button{padding:11px;font-size:12px}}
+
+/* Independent courier/admin demo shell */
+.dv32.dv-role-mode{--sidebar-width:0px!important;min-height:100dvh}
+.dv32.dv-role-mode>.topbar,.dv32.dv-role-mode>.dv-sidebar,.dv32.dv-role-mode>.mobile-nav,.dv32.dv-role-mode>footer{display:none!important}
+.dv32.dv-role-mode main{margin:0!important;padding:0!important;width:100%!important;max-width:none!important}
+.dv32.dv-role-mode .dv-rolebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px;background:var(--surface);border-bottom:1px solid var(--line)}
+.dv32.dv-role-mode .dv-rolebrand{display:flex;align-items:center;gap:12px}
+.dv32.dv-role-mode .dv-rolebrand img{width:95px;height:45px;object-fit:contain}
+.dv32.dv-role-mode .dv-rolebrand>div{display:grid;gap:3px}
+.dv32.dv-role-mode .dv-rolebrand small{font-size:11px;color:var(--muted)}
+.dv32.dv-role-mode .dv-rolebar button{border:1px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);padding:10px}
+@media(max-width:600px){.dv32.dv-role-mode .dv-rolebrand img{width:65px}.dv32.dv-role-mode .dv-rolebrand strong{font-size:12px}}
