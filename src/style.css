@@ -720,3 +720,30 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Courier GPS and route actions */
 .dv-delivery-actions .dv-courier-route-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex:1 1 160px;min-height:50px;padding:12px 16px;box-sizing:border-box;border-radius:14px;border:1px solid #f2673266;background:linear-gradient(145deg,#f267321b,#f2673208);color:inherit;text-decoration:none!important;font-weight:800;font-size:14px;transition:transform .15s,background .15s}.dv-delivery-actions .dv-courier-route-link:hover{background:#f267322b;transform:translateY(-1px)}.dv-delivery-actions .dv-courier-route-link svg:first-child{color:#f26732}.dv-delivery-actions .dv-courier-route-link svg:last-child{margin-left:auto;opacity:.65}.dv-gps-arrival{flex:1 1 100%;display:grid;gap:10px;padding:16px;border:1px solid #f2673240;border-radius:16px;background:#f267320a}.dv-gps-arrival-heading{display:flex;align-items:center;gap:8px;color:#f26732}.dv-gps-arrival p{margin:0;line-height:1.5}.dv-gps-arrival small{display:flex;align-items:center;gap:6px;opacity:.72;line-height:1.5}.dv-gps-arrival button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px}.dv-gps-arrival button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.4)}
+
+/* Navegación y superficies de marca · móvil */
+.dv-global-back{padding-top:12px;padding-bottom:2px}
+.dv-global-back button{display:inline-flex;align-items:center;gap:9px;border:1px solid color-mix(in srgb,var(--ink,#26372d) 15%,transparent);background:var(--surface,#fff);color:var(--ink,#26372d);padding:11px 16px;border-radius:999px;font-weight:750;box-shadow:0 5px 18px #0000000a}
+.dv-more-backdrop{backdrop-filter:blur(13px);background:#08120fbd}
+.dv-more-sheet{background:var(--surface,#202322);border:1px solid #ffffff20;border-radius:30px 30px 0 0;padding:16px 22px max(24px,env(safe-area-inset-bottom));max-height:88dvh;overflow-y:auto}
+.dv-more-topline{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:850;letter-spacing:2px;color:#e87339;margin:0 0 12px}
+.dv-more-topline button{width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:50%;background:#f9e9dc;color:#204033}
+.dv-more-title{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.dv-more-title h2{font-family:inherit;font-size:clamp(22px,6vw,29px);font-weight:850;margin:0;letter-spacing:-.7px}
+.dv-more-symbol{width:66px;height:66px;display:grid;place-items:center;border-radius:21px;background:linear-gradient(145deg,#ffb45c,#f35b1d);box-shadow:0 10px 25px #ff792b45;overflow:hidden;flex-shrink:0}
+.dv-more-symbol img{width:83%;height:83%;object-fit:contain}
+.dv-more-subtitle{font-size:13px;line-height:1.5;opacity:.7;margin-bottom:18px}
+.dv-more-grid{gap:11px}
+.dv-more-grid button{min-height:92px;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px;border-radius:19px;padding:15px;background:color-mix(in srgb,var(--surface,#202322) 92%,#fb853d 8%);border:1px solid #fb91402e;font-size:13px;transition:transform .2s,border-color .2s,background .2s}
+.dv-more-grid button:active{transform:scale(.97)}.dv-more-grid button:hover{border-color:#fa843b;background:color-mix(in srgb,var(--surface,#202322) 85%,#fb853d 15%)}
+.dv-more-grid button svg{width:22px;height:22px;color:#f28a4b}
+.dv-more-close{background:linear-gradient(120deg,#ff8e36,#ed5422);color:#fff;border-radius:17px}
+.dv-flash-dialog{border-radius:28px;padding:18px;max-height:85dvh}
+.dv-flash-dialog .gx-heading h1{font-family:inherit;font-size:clamp(24px,6vw,34px);font-weight:850;line-height:1.1;letter-spacing:-1px;margin:10px 0}
+.dv-flash-dialog .gx-heading p{font-size:13px;line-height:1.55}
+.dv-flash-dialog .gx-card{border-radius:20px;padding:24px 18px}
+.gx-flash-brand{display:flex;align-items:center;gap:12px;min-height:55px}.gx-flash-brand img{width:125px;max-height:55px;object-fit:contain}.gx-flash-brand span{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:#fff1d7;font-size:23px}
+.gx-flash-empty-icon{width:52px;height:52px;border-radius:16px;background:#fff1d7;display:grid;place-items:center;font-size:26px;margin-bottom:12px}
+.dv-exit-overlay{position:fixed;inset:0;z-index:11000;background:#07130ecb;backdrop-filter:blur(9px);display:grid;place-items:center;padding:22px}
+.dv-exit-dialog{width:min(100%,400px);background:var(--surface,#fff);color:var(--ink,#26372d);border-radius:26px;padding:28px 22px;text-align:center;box-shadow:0 20px 60px #0006}
+.dv-exit-dialog img{width:75px;height:75px;object-fit:contain;margin:auto}.dv-exit-dialog h2{font-size:22px;margin:12px 0}.dv-exit-dialog p{opacity:.75;font-size:14px}.dv-exit-dialog button{display:block;width:100%;border-radius:13px;padding:13px;margin-top:10px;border:1px solid #ec7b41;background:transparent;color:inherit;font-weight:750}.dv-exit-dialog button:first-of-type{background:#ef7438;color:#fff}
