@@ -5,3 +5,5 @@
 .ow-paused-label{font-weight:800;color:#ef4444;font-size:12px;margin:12px 0}
 .ow-board-offline{opacity:.62;filter:grayscale(.55)}
 @media(max-width:700px){.ow-offline{align-items:flex-start;flex-wrap:wrap}.ow-offline span{margin-left:40px}}
+
+.ow-sync-indicator{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px;padding:10px 13px;border:1px solid var(--line);border-radius:12px;margin:10px 0;background:var(--surface)}.ow-sync-indicator small{margin-left:auto;color:var(--muted)}.ow-sync-dot{width:9px;height:9px;border-radius:50%;background:#e59d3a;flex-shrink:0}.ow-sync-dot.healthy{background:#24a46b}
