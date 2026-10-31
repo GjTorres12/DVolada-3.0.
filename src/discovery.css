@@ -40,3 +40,14 @@
 .dv32 footer.dv-footer-compact .nexora-official-logo{max-height:46px!important;max-width:215px!important;width:auto!important;height:auto!important;object-fit:contain!important}
 @media(max-width:800px){.dv32 footer.dv-footer-compact .footer-inner{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:18px 15px 12px!important;gap:16px!important}.dv32 footer.dv-footer-compact .footer-inner>div:first-child img{max-height:44px!important;max-width:165px!important}.dv32 footer.dv-footer-compact .footer-bottom{padding:12px 15px 15px!important}.dv32 footer.dv-footer-compact .nexora-official-logo{max-height:40px!important;max-width:175px!important}}
 @media(max-width:430px){.dv32 footer.dv-footer-compact .footer-inner{grid-template-columns:1fr 1fr!important;gap:15px!important}.dv32 footer.dv-footer-compact .footer-inner small,.dv32 footer.dv-footer-compact .footer-inner button,.dv32 footer.dv-footer-compact .footer-inner strong{font-size:12px!important}.dv32 footer.dv-footer-compact .footer-inner strong{font-size:13px!important}.dv32 footer.dv-footer-compact .footer-bottom{flex-wrap:wrap!important;justify-content:space-between!important}.dv32 footer.dv-footer-compact .nexora-official-logo{max-height:38px!important;max-width:160px!important}}
+
+/* Animated delivery progress mascot: transparent, no white frame */
+.dv-track-logo.dv-track-runner{width:76px;height:76px;border:0;border-radius:0;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none;transition:left .8s cubic-bezier(.2,.8,.2,1)}
+.dv-track-runner .dv-courier-motion{width:72px;height:72px;filter:drop-shadow(0 4px 8px rgba(246,103,30,.3))}
+.dv-track-runner .dv-courier-motion svg{width:100%;height:100%}
+.dv-track-runner .dv-courier-runner{transform-origin:50% 75%;animation:dv-tracker-run .45s ease-in-out infinite alternate}
+.dv-track-runner::before{content:'';position:absolute;right:70%;top:50%;width:32px;height:3px;background:linear-gradient(90deg,transparent,#ff8c26);border-radius:9px;opacity:.8;animation:dv-tracker-trail .8s ease-in-out infinite alternate}
+@keyframes dv-tracker-run{from{transform:translateY(3px) rotate(-2deg)}to{transform:translateY(-4px) rotate(2deg)}}
+@keyframes dv-tracker-trail{from{transform:scaleX(.6);opacity:.3}to{transform:scaleX(1);opacity:.8}}
+@media(max-width:600px){.dv-track-logo.dv-track-runner{width:58px;height:58px}.dv-track-runner .dv-courier-motion{width:56px;height:56px}.dv-track-runner::before{width:22px}}
+@media(prefers-reduced-motion:reduce){.dv-track-runner .dv-courier-runner,.dv-track-runner::before{animation:none!important}.dv-track-logo.dv-track-runner{transition:none!important}}
