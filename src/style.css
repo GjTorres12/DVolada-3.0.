@@ -672,3 +672,40 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv32.dv-role-mode .dv-rolebrand small{font-size:11px;color:var(--muted)}
 .dv32.dv-role-mode .dv-rolebar button{border:1px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);padding:10px}
 @media(max-width:600px){.dv32.dv-role-mode .dv-rolebrand img{width:65px}.dv32.dv-role-mode .dv-rolebrand strong{font-size:12px}}
+
+/* Checkout on mobile: keep the entire confirmation sheet above fixed navigation.
+   Only the sheet scrolls, so the slide-to-confirm control remains reachable. */
+@media(max-width:760px){
+ .dv32 .modal-backdrop:has(.dv-slide-wrap){
+  z-index:210!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+  padding:0!important;
+  overflow:hidden!important;
+ }
+ .dv32 .modal-backdrop:has(.dv-slide-wrap)>.modal{
+  width:100%!important;
+  max-width:100%!important;
+  max-height:calc(100dvh - 12px)!important;
+  min-height:0!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  box-sizing:border-box!important;
+  border-radius:22px 22px 0 0!important;
+  padding:20px 18px calc(32px + env(safe-area-inset-bottom,0px))!important;
+ }
+ .dv32 .modal-backdrop:has(.dv-slide-wrap) .dv-slide-wrap{
+  margin-bottom:calc(12px + env(safe-area-inset-bottom,0px));
+  scroll-margin-bottom:110px;
+ }
+ .dv32 .modal-backdrop:has(.dv-slide-wrap) .modal-head{
+  position:sticky;
+  top:-20px;
+  z-index:3;
+  background:var(--surface);
+  padding:12px 0;
+ }
+}
