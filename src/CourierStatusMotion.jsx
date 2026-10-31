@@ -1,16 +1,32 @@
 import React from 'react';
 import './CourierStatusMotion.css';
 
-// Silueta vectorizada del ícono naranja suministrado para Dvolada.
-// La animación representa movimiento de entrega; no implica rastreo GPS.
+// Repartidor Dvolada: silueta naranja original, con extremidades separadas para animación.
+// La posición del personaje indica el estado del pedido, no una ubicación GPS.
 export default function CourierStatusMotion({status='En camino'}){
  const moving=['Recogido','En camino','En ubicación'].includes(status);
- return <span className={'dv-courier-motion '+(moving?'is-moving':'')} role="img" aria-label={moving?'Repartidor en movimiento, estado: '+status:'Repartidor Dvolada'}>
-  <svg viewBox="260 65 870 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-   <g className="dv-courier-runner" fill="#ff6900">
-    <path d="M1103 326 L846 326 842 408 794 401 736 379 740 435 719 490 711 448 690 403 659 372 615 351 572 343 489 348 424 366 356 396 338 408 368 500 413 484 460 487 511 511 517 519 514 539 490 612 471 639 447 659 419 672 385 678 311 672 290 764 385 795 490 806 564 795 651 755 719 788 753 821 776 867 781 927 904 931 899 792 873 709 823 637 736 566 826 571 866 564 910 547 943 525 994 464 1103 464Z"/>
-    <path d="M900 103 L884 96 853 96 792 113 724 147 660 194 668 176 691 151 747 112 719 94 687 84 649 84 617 95 581 125 560 168 558 220 577 275 627 337 656 353 694 357 745 341 783 310 807 266 812 223 801 179 819 195 860 169 899 132 905 118Z"/>
-    <path d="M844 272 H1103 V314 H844Z"/>
+ return <span className={'dv-courier-motion '+(moving?'is-moving':'')} role="img" aria-label={'Repartidor Dvolada, estado: '+status}>
+  <svg viewBox="0 0 140 112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+   <g className="dv-courier-art" fill="#ff6900" stroke="#ff6900" strokeLinecap="round" strokeLinejoin="round">
+    <g className="dv-courier-leg dv-courier-leg-back" style={{transformOrigin:'66px 72px'}}>
+     <path d="M65 72 Q52 84 41 93 L22 97" fill="none" strokeWidth="12"/>
+    </g>
+    <g className="dv-courier-leg dv-courier-leg-front" style={{transformOrigin:'67px 72px'}}>
+     <path d="M67 72 Q80 82 86 95 L103 99" fill="none" strokeWidth="12"/>
+    </g>
+    <path d="M44 49 Q55 38 69 42 Q83 46 86 59 L78 79 Q62 86 49 72 L37 60Z"/>
+    <g className="dv-courier-arm dv-courier-arm-back" style={{transformOrigin:'54px 51px'}}>
+     <path d="M53 51 Q39 48 31 57 L19 62" fill="none" strokeWidth="10"/>
+    </g>
+    <g className="dv-courier-head">
+     <circle cx="69" cy="25" r="15"/>
+     <path d="M74 18 Q89 9 100 14" fill="none" strokeWidth="7"/>
+    </g>
+    <g className="dv-courier-arm dv-courier-arm-front" style={{transformOrigin:'79px 52px'}}>
+     <path d="M79 52 Q91 60 103 49 L110 40" fill="none" strokeWidth="10"/>
+     <rect x="106" y="29" width="26" height="22" rx="3" stroke="none"/>
+     <path d="M108 36 H130" fill="none" stroke="#fff4e5" strokeWidth="3"/>
+    </g>
    </g>
   </svg>
  </span>;
