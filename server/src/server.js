@@ -51,7 +51,7 @@ const server=http.createServer(async(req,res)=>{
  }
  if(req.method==='GET'&&url.pathname==='/api/v1/restaurant/orders/changes'){
   const since=url.searchParams.get('since')||'0';
-  if(!/^(0|[1-9]\\d{0,15})$/.test(since)||!Number.isSafeInteger(Number(since)))return send(res,400,{error:'Invalid since cursor'});
+  if(!/^(0|[1-9]\d{0,15})$/.test(since)||!Number.isSafeInteger(Number(since)))return send(res,400,{error:'Invalid since cursor'});
   const {rows}=await pool.query(
    'SELECT e.id AS cursor,e.order_id,e.from_status,e.to_status,e.version,e.created_at FROM online_order_events e WHERE e.restaurant_id=$1 AND e.id>$2 ORDER BY e.id ASC LIMIT 101',
    [identity.restaurantId,since]
@@ -59,7 +59,7 @@ const server=http.createServer(async(req,res)=>{
   const hasMore=rows.length>100,events=rows.slice(0,100);
   return send(res,200,{events,nextCursor:String(events.at(-1)?.cursor??since),hasMore,serverTime:new Date().toISOString()});
  }
- const detail=/^\\/api\\/v1\\/restaurant\\/orders\\/([0-9a-f-]+)$/i.exec(url.pathname);
+ const detail=/^\/api\/v1\/restaurant\/orders\/([0-9a-f-]+)$/i.exec(url.pathname);
  if(req.method==='GET'&&detail){
   if(!uuid.test(detail[1]))return send(res,400,{error:'Invalid order ID'});
   const {rows}=await pool.query('SELECT id,order_number,status,version,created_at,updated_at FROM online_orders WHERE id=$1 AND restaurant_id=$2',[detail[1],identity.restaurantId]);
