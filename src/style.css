@@ -599,3 +599,44 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-flash-fab::after{inset:5px!important;border-radius:50%!important}
 .dv-flash-fab svg{width:27px;height:27px;filter:drop-shadow(0 0 5px #fff9)}
 @media(max-width:480px){.dv-flash-fab{width:46px!important;height:46px!important;right:14px!important;bottom:calc(94px + env(safe-area-inset-bottom))!important}}
+
+/* Dvolada Online: restaurar accesos de restaurantes en bienvenida móvil. */
+@media(max-width:900px){
+ .dv32.dv-welcome-mode .welcome-screen .welcome-affiliates,
+ .dv32.dv-welcome-mode .welcome-affiliates{
+  display:grid!important;
+  width:min(100%,390px)!important;
+  gap:9px!important;
+  margin:12px auto 0!important;
+  padding:12px 0 0!important;
+  border-top:1px solid rgba(255,255,255,.18)!important;
+  position:relative!important;
+  z-index:3!important;
+ }
+ .dv32.dv-welcome-mode .welcome-affiliates>span{
+  display:block!important;
+  font-size:10px!important;
+  letter-spacing:.12em!important;
+  color:var(--muted)!important;
+  text-align:center!important;
+ }
+ .dv32.dv-welcome-mode .welcome-affiliates button{
+  display:flex!important;
+  width:100%!important;
+  min-height:44px!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  padding:10px 14px!important;
+  border:1px solid var(--line)!important;
+  border-radius:14px!important;
+  background:var(--surface)!important;
+  color:var(--ink)!important;
+  font-size:13px!important;
+  font-weight:700!important;
+ }
+ .dv32.dv-welcome-mode .welcome-panel{
+  overflow-y:auto!important;
+  padding-bottom:max(28px,env(safe-area-inset-bottom))!important;
+ }
+}
