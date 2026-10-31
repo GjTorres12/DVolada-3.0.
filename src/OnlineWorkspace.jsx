@@ -25,13 +25,17 @@ export default function OnlineWorkspace({orders=[],places=[],onUpdate=()=>{},onL
  useEffect(()=>{localStorage.setItem('dv_online_workspaceTheme',JSON.stringify(theme))},[theme]);
  const business=places.find(p=>p.id===1);
  const list=orders.filter(o=>o.kind==='food'&&(String(o.placeId)==='1'||o.placeName===business?.name));
- const active=list.filter(o=>!['Entregado','Cancelado','Rechazado'].includes(o.status));
+ const active=list.filter(o=>!['Entregado','Cancelado','Rechazado','Cancelación solicitada'].includes(o.status));
  const todays=active.filter(o=>sameDay(dateOf(o)));
  const older=active.filter(o=>!sameDay(dateOf(o)));
  const scheduled=todays.filter(o=>o.scheduledFor&&new Date(o.scheduledFor)>new Date());
  const live=todays.filter(o=>!scheduled.includes(o));
  const groups={new:live.filter(o=>o.status==='Pendiente'),prep:live.filter(o=>['Aceptado','Preparando'].includes(o.status)),ready:live.filter(o=>o.status==='Listo')};
  const current=detail?list.find(o=>o.id===detail):null;
+ const cancellationQueue=list.filter(o=>o.status==='Cancelación solicitada');
+ const recentCancelled=list.filter(o=>o.status==='Cancelado').slice(0,8);
+ const cancellationSeen=useRef(null);
+ useEffect(()=>{const ids=new Set(list.filter(o=>['Cancelado','Cancelación solicitada'].includes(o.status)).map(o=>o.id+':'+o.status));if(cancellationSeen.current!==null){const fresh=[...ids].filter(id=>!cancellationSeen.current.has(id));if(fresh.length){setNotice('🔔 Atención: cancelación o solicitud de cancelación recibida');if(soundReady&&settings.sound!=='silent'){try{const c=audio.current;c.resume();[760,590,440].forEach((hz,i)=>{const osc=c.createOscillator(),g=c.createGain(),t=c.currentTime+i*.2;osc.type='triangle';osc.frequency.value=hz;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(settings.volume/100*.15,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.17);osc.connect(g);g.connect(c.destination);osc.start(t);osc.stop(t+.18)})}catch{}}}}cancellationSeen.current=ids},[orders,soundReady,settings.sound,settings.volume]);
  const set=k=>v=>setSettings(s=>({...s,[k]:v}));
  useEffect(()=>{localStorage.setItem('dv_online_settings',JSON.stringify(settings))},[settings]);
  useEffect(()=>{localStorage.setItem('dv_online_pauseUntil',JSON.stringify(pauseUntil))},[pauseUntil]);
@@ -63,6 +67,7 @@ export default function OnlineWorkspace({orders=[],places=[],onUpdate=()=>{},onL
  {screen==='inicio'&&<><div className="ow-welcome"><div><span className="ow-kicker">TU JORNADA</span><h2>¡Hola, {business?.name||'restaurante'}!</h2><p>{live.length?'Tus pedidos están organizados para trabajar.':'Todo listo para comenzar a recibir pedidos.'}</p></div><div className="ow-welcome-counts"><span>📥 {groups.new.length} nuevos</span><span>👨‍🍳 {groups.prep.length} en cocina</span><span>✓ {groups.ready.length} listos</span></div></div>
  {older.length>0&&<div className="ow-notice"><AlertTriangle size={17}/>{older.length} pedido(s) de días anteriores siguen pendientes. Revisalos en Historial.</div>}
  {scheduled.length>0&&<div className="ow-scheduled"><CalendarClock size={18}/><strong>Programados: {scheduled.length}</strong><span>{scheduled.map(o=>o.orderNo||o.id).join(', ')}</span></div>}
+ {(cancellationQueue.length>0||recentCancelled.length>0)&&<section className="ow-cancel-notices" role="region" aria-label="Cancelaciones de pedidos"><h3>🔔 Cancelaciones y solicitudes</h3>{cancellationQueue.map(o=><div className="ow-cancel-row" key={o.id}><strong>{o.orderNo||o.id} · Solicitud del cliente</strong><span>Motivo: {o.cancelReason||'No indicado'}</span><div><button disabled={!networkOnline} onClick={()=>onUpdate(o.id,'Cancelado')}>Aprobar cancelación</button><button disabled={!networkOnline} onClick={()=>onUpdate(o.id,'Preparando')}>Rechazar solicitud</button></div></div>)}{recentCancelled.map(o=><div className="ow-cancel-row" key={o.id}><strong>❌ {o.orderNo||o.id} · CANCELADO</strong><span>{o.cancelReason||'Cancelación registrada'} · No preparar ni despachar</span></div>)}</section>}
  {!networkOnline&&<div className="ow-paused-label">Vista sin conexión · Los cambios de pedidos están bloqueados</div>}
  <div className="ow-mobile-tabs">{[['new','Nuevos'],['prep','Preparando'],['ready','Listos']].map(([k,v])=><button key={k} className={mobile===k?'selected':''} onClick={()=>setMobile(k)}>{v} ({groups[k].length})</button>)}</div>
  <div className={'ow-board '+(!networkOnline?'ow-board-offline':'')}>{column('new','Nuevos','📥',groups.new)}{column('prep','En preparación','👨‍🍳',groups.prep)}<section className={'ow-column '+(mobile==='ready'?'ow-mobile-active':'')}><header><span>✓ Listos</span><b>{groups.ready.length}</b></header><div className="ow-subhead">🏪 Esperando cliente</div><div className="ow-stack">{ordered(groups.ready.filter(o=>o.delivery!=='delivery'),'ready').map(card)}</div><div className="ow-subhead">🛵 Esperando repartidor</div><div className="ow-stack">{ordered(groups.ready.filter(o=>o.delivery==='delivery'),'ready').map(card)}</div></section></div>
