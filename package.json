@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "node scripts/generate-icons.mjs && vite build"
+    "build": "node scripts/generate-icons.mjs && vite build",
+    "test:online": "node --test tests/online-api.test.js"
   },
   "dependencies": {
     "react": "^18.3.1",
