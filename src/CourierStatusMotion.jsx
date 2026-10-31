@@ -7,8 +7,8 @@ export default function CourierStatusMotion({status='En camino'}){
  return <span className={'dv-courier-motion '+(walking?'is-moving':'')} role="img" aria-label={'Repartidor naranja caminando con una caja. Estado: '+status}>
   <svg viewBox="0 0 90 110" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
    <g className="dv-courier-walker">
-    <g className="dv-courier-back-leg"><path d="M41 71 L31 84 L22 99" fill="none" stroke="#f97316" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/><path d="M22 99 L14 99" stroke="#f97316" strokeWidth="7" strokeLinecap="round"/></g>
-    <g className="dv-courier-front-leg"><path d="M45 71 L56 84 L67 98" fill="none" stroke="#ff8a1e" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/><path d="M67 98 L75 98" stroke="#ff8a1e" strokeWidth="7" strokeLinecap="round"/></g>
+    <g className="dv-courier-back-leg"><path d="M42 71 L42 86 L42 101" fill="none" stroke="#e96110" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/><path d="M42 101 L49 101" stroke="#e96110" strokeWidth="7" strokeLinecap="round"/></g>
+    <g className="dv-courier-front-leg"><path d="M45 71 L45 86 L45 101" fill="none" stroke="#ff8a1e" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/><path d="M45 101 L53 101" stroke="#ff8a1e" strokeWidth="7" strokeLinecap="round"/></g>
     <rect x="22" y="42" width="16" height="25" rx="6" fill="#dc5b10"/>
     <path d="M36 42 Q49 37 55 50 L52 73 Q44 80 35 71 Z" fill="#ff790f"/>
     <path d="M36 48 L28 62 L34 69" fill="none" stroke="#e96a0e" strokeWidth="8" strokeLinecap="round"/>
