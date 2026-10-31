@@ -58,3 +58,16 @@
 .dv-track-progress .dv-track-runner .dv-courier-motion{width:52px;height:66px;align-items:flex-end}
 .dv-track-progress .dv-track-runner .dv-courier-motion svg{width:100%;height:100%;overflow:visible}
 @media(max-width:480px){.dv-track-progress .dv-track-line{margin-top:70px}.dv-track-progress .dv-track-logo.dv-track-runner{width:46px;height:60px}.dv-track-progress .dv-track-runner .dv-courier-motion{width:46px;height:60px}}
+
+/* Notifications: keep the panel fully inside the mobile viewport. */
+.dv-notification-panel{box-sizing:border-box;overscroll-behavior:contain}
+.dv-notification-item{cursor:pointer;min-width:0}
+.dv-notification-item span{min-width:0;overflow-wrap:anywhere}
+.dv-notification-item small{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:700px){
+ .dv-bell-wrap{position:static}
+ .dv-notification-panel{position:fixed;top:calc(env(safe-area-inset-top,0px) + 80px);left:12px;right:12px;width:auto;max-width:none;max-height:min(65dvh,520px);margin:0;z-index:500;border-radius:18px;padding:12px;overflow-y:auto;overflow-x:hidden}
+ .dv-notification-item{padding:13px 10px}
+ .dv-notification-item strong{font-size:14px}
+ .dv-notification-item small{font-size:12px}
+}
