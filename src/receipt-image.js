@@ -3,7 +3,7 @@ const loadImage=src=>new Promise((resolve,reject)=>{const img=new Image();img.on
 export async function saveReceiptImage(order,base='/'){
  const items=Array.isArray(order.items)?order.items:[];
  const w=900,p=56,rowH=62,tableY=530,tableEnd=tableY+74+Math.max(items.length,1)*rowH;
- const summaryY=tableEnd+28,pinY=summaryY+154,thanksY=pinY+190,footerY=thanksY+135,h=footerY+175;
+ const summaryY=tableEnd+28,pinY=summaryY+280,thanksY=pinY+190,footerY=thanksY+135,h=footerY+175;
  const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
  const c=canvas.getContext('2d');if(!c)throw new Error('Canvas no disponible');
  const dark='#123b30',orange='#fa621c',muted='#66746b',cream='#fffaf4';
@@ -15,6 +15,8 @@ export async function saveReceiptImage(order,base='/'){
  const line=(y,x=p,to=w-p)=>{rect(x,y,to-x,2,'#e6e3dc')};
  const subtotal=items.reduce((n,i)=>n+(Number(i.qty)||1)*(Number(i.price)||0),0);
  const total=Number(order.total)||0,extras=Math.round((total-subtotal)*100)/100;
+ const hasBreakdown=Number.isFinite(Number(order.serviceFee))&&Number.isFinite(Number(order.deliveryFee));
+ const serviceFee=Number(order.serviceFee)||0,deliveryFee=Number(order.deliveryFee)||0,discount=Number(order.discount)||0;
  const number=String(order.orderNo||order.id||'—');
  const date=String(order.date||new Date().toLocaleString('es-HN'));
  rect(0,0,w,h,cream);
@@ -38,13 +40,21 @@ export async function saveReceiptImage(order,base='/'){
  if(!items.length)txt('Sin productos registrados',p+20,tableY+112,20,muted);
  items.forEach((i,k)=>{const y=tableY+58+k*rowH;rect(p,y,w-p*2,rowH,k%2?'#f5efe8':'#fff');txt(fit(i.name||'Producto',36,450,20),p+18,y+39,20,dark,'600');txt(Number(i.qty)||1,w-300,y+39,20,dark,'500','right');txt(money((Number(i.qty)||1)*(Number(i.price)||0)),w-p-16,y+39,20,dark,'600','right')});
  line(tableEnd+6);
- // Totals: do not label unknown fees as tax or discount.
- txt('Subtotal',p+18,summaryY+44,21,muted);
- txt(money(subtotal),w-p-18,summaryY+44,22,dark,'700','right');
- if(Math.abs(extras)>.005){txt(extras>0?'Envío y otros cargos':'Ajustes y descuentos',p+18,summaryY+86,20,muted);txt(money(extras),w-p-18,summaryY+86,21,dark,'600','right')}
- round(p,summaryY+100,w-p*2,70,14,orange);
- txt('TOTAL A PAGAR',p+22,summaryY+146,24,'#fff','800');
- txt(money(total),w-p-22,summaryY+147,32,'#fff','800','right');
+ // Breakdown uses stored order values; older orders retain the generic adjustment line.
+ txt('Subtotal',p+18,summaryY+35,21,muted);
+ txt(money(subtotal),w-p-18,summaryY+35,22,dark,'700','right');
+ if(hasBreakdown){
+  txt('Servicio',p+18,summaryY+75,20,muted);txt(money(serviceFee),w-p-18,summaryY+75,21,dark,'600','right');
+  txt('Entrega estimada',p+18,summaryY+115,20,muted);txt(money(deliveryFee),w-p-18,summaryY+115,21,dark,'600','right');
+  if(discount>0){txt('Descuento',p+18,summaryY+155,20,muted);txt('-'+money(discount),w-p-18,summaryY+155,21,dark,'600','right')}
+ }else if(Math.abs(extras)>.005){
+  txt(extras>0?'Envío y otros cargos':'Ajustes y descuentos',p+18,summaryY+90,20,muted);
+  txt(money(extras),w-p-18,summaryY+90,21,dark,'600','right');
+ }
+ round(p,summaryY+184,w-p*2,70,14,orange);
+ txt('TOTAL A PAGAR',p+22,summaryY+230,24,'#fff','800');
+ txt(money(total),w-p-22,summaryY+231,32,'#fff','800','right');
+ txt('Pago: '+fit(order.payment||'No especificado',36,500,17),p+16,summaryY+272,17,muted);
  // Separate PIN card with generous space.
  round(p,pinY+18,w-p*2,145,17,'#e7f3e9');
  txt('PIN DE ENTREGA',p+26,pinY+65,20,dark,'800');
