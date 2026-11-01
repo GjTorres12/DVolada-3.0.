@@ -756,3 +756,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Customer local order history */
 .dv-customer-history{display:grid;gap:14px}.dv-history-card{display:grid;gap:12px}.dv-history-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #9993}.dv-history-actions{display:flex;gap:10px;flex-wrap:wrap}.dv-history-actions button{display:inline-flex;align-items:center;gap:8px}@media(max-width:480px){.dv-history-actions button{flex:1;justify-content:center}}
+
+/* Customer reorder preview */
+.dv-reorder-lines{display:grid;gap:9px;margin:14px 0}.dv-reorder-lines>div{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid #9993}.dv-reorder-missing{padding:12px;border-radius:12px;background:#f59e0b16;border:1px solid #f59e0b55;margin:12px 0}.dv-reorder-missing p{margin:6px 0 0}.dv-reorder-modal .dv-cancel-actions{flex-wrap:wrap}
