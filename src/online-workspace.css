@@ -66,3 +66,6 @@
 
 /* Cloud brand and compact device safety */
 .ow-sidebar-brand{min-width:0}.ow-sidebar-brand img{width:42px;height:42px;max-width:100%;object-fit:contain;flex-shrink:0}.ow-sidebar-brand span{min-width:0;overflow-wrap:anywhere}.ow-sidebar-brand small{display:block;letter-spacing:.12em;font-size:.64em}.ow-shell img{max-width:100%}.ow-card,.ow-detail,.ow-modal{overflow-wrap:anywhere}@media(max-width:800px){.ow-sidebar-brand img{width:34px;height:34px}.ow-shell,.ow-board,.ow-column{min-width:0}.ow-toolbar>*{min-width:0}.ow-card{max-width:100%}}@media(max-width:420px){.ow-top h1{font-size:21px}.ow-toolbar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ow-modal{width:calc(100% - 20px);padding:14px}}
+
+/* Official Cloud wordmark: preserve full proportions in desktop and mobile navigation */
+.ow-sidebar-brand img{width:clamp(100px,13vw,175px);height:auto;max-height:72px;object-fit:contain;object-position:left center}.ow-sidebar-brand .ow-brand-accessible{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:800px){.ow-sidebar-brand img{width:112px;max-height:48px}}@media(max-width:420px){.ow-sidebar-brand img{width:94px;max-height:42px}}
