@@ -753,3 +753,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Customer checkout price transparency */
 .dv-checkout-breakdown{border:1px solid #9994;border-radius:15px;padding:14px;margin:16px 0;display:grid;gap:9px}.dv-checkout-breakdown>div{display:flex;justify-content:space-between;gap:12px;font-size:14px}.dv-checkout-breakdown .dv-checkout-grand{border-top:1px solid #9995;padding-top:12px;font-size:17px;font-weight:800}.dv-checkout-breakdown small{font-size:11px;opacity:.75;line-height:1.5}
+
+/* Customer local order history */
+.dv-customer-history{display:grid;gap:14px}.dv-history-card{display:grid;gap:12px}.dv-history-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #9993}.dv-history-actions{display:flex;gap:10px;flex-wrap:wrap}.dv-history-actions button{display:inline-flex;align-items:center;gap:8px}@media(max-width:480px){.dv-history-actions button{flex:1;justify-content:center}}
