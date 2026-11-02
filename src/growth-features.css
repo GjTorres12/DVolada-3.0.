@@ -12,3 +12,35 @@
 :root[data-theme="dark"] .gx-flash-brand.dv-flash-logo-lockup .dv-flash-logo-light{display:none}
 :root[data-theme="dark"] .gx-flash-brand.dv-flash-logo-lockup .dv-flash-logo-dark{display:block}
 @media(max-width:520px){.gx-flash-brand.dv-flash-logo-lockup{max-width:245px}.gx-flash-brand.dv-flash-logo-lockup img{max-height:95px}}
+
+
+/* D Volada Flash premium: official logo, responsive layout */
+.dv-flash-premium{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--surface);border-radius:24px;overflow:hidden}
+.dv-flash-premium-hero{position:relative;padding:30px 30px 25px;background:linear-gradient(145deg,#fff8f1,#fff 66%);border-bottom:1px solid #f3e5d7}
+[data-theme=dark] .dv-flash-premium-hero{background:linear-gradient(145deg,#3a241c,var(--surface) 70%);border-color:var(--line)}
+.dv-flash-premium-brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:27px;padding-right:28px}
+.dv-flash-premium-brand img{width:min(180px,55%);height:65px;object-fit:contain;object-position:left center}
+.dv-flash-premium-tag{display:inline-flex;align-items:center;gap:5px;padding:7px 10px;border-radius:999px;background:#fff0d8;color:#ac5100;font-size:11px;font-weight:900;letter-spacing:.08em}
+.dv-flash-premium-eyebrow{display:block;color:#e56a2a;font-size:10px;font-weight:900;letter-spacing:.17em;margin-bottom:9px}
+.dv-flash-premium-hero h1{font-family:'Outfit',sans-serif;font-size:clamp(27px,5vw,38px);letter-spacing:-.05em;line-height:1.08;margin:0 0 11px}
+.dv-flash-premium-hero p{font-size:13px;line-height:1.65;color:var(--muted);max-width:460px;margin:0}
+.dv-flash-premium-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:21px}
+.dv-flash-premium-meta span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:10px;font-weight:750;background:var(--surface)}
+.dv-flash-premium-content{padding:24px 30px 30px}
+.dv-flash-premium-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.dv-flash-premium-offer{padding:20px;border-radius:20px;border:1px solid var(--line);background:var(--surface);box-shadow:0 10px 30px #24150908}
+.dv-flash-premium-offer-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.dv-flash-premium-offer-top span{display:inline-flex;align-items:center;gap:5px;color:#e36a26;font-size:11px;font-weight:850}
+.dv-flash-premium-offer-top small{font-size:10px;color:var(--muted)}
+.dv-flash-premium-offer h2{font-size:19px;line-height:1.2;margin:20px 0 6px}
+.dv-flash-premium-offer p{font-size:12px;color:var(--muted);margin-bottom:15px}
+.dv-flash-premium-prices{display:flex;align-items:center;gap:12px;margin-bottom:19px}
+.dv-flash-premium-prices strong{font-size:25px;color:#ef682d}
+.dv-flash-premium-prices del{font-size:13px;color:var(--muted)}
+.dv-flash-premium-action{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:13px;background:linear-gradient(110deg,#fa782c,#ed4e22);color:#fff;font-weight:800;font-size:12px;padding:13px 16px;cursor:pointer;box-shadow:0 7px 18px #f2673230}
+.dv-flash-premium-empty{text-align:center;display:flex;flex-direction:column;align-items:center;padding:25px 8px 20px}
+.dv-flash-premium-empty-icon{width:70px;height:70px;border-radius:22px;background:linear-gradient(145deg,#fff3dc,#ffe1bc);display:grid;place-items:center;color:#e77a17;margin-bottom:18px}
+.dv-flash-premium-empty>span{font-size:10px;letter-spacing:.15em;font-weight:900;color:#e67b29}
+.dv-flash-premium-empty h2{font-size:clamp(21px,4vw,27px);line-height:1.2;max-width:350px;margin:10px 0}
+.dv-flash-premium-empty p{font-size:13px;color:var(--muted);max-width:350px;line-height:1.6;margin-bottom:22px}
+@media(max-width:520px){.dv-flash-premium-hero{padding:22px 19px 20px}.dv-flash-premium-content{padding:18px}.dv-flash-premium-brand{margin-bottom:18px}.dv-flash-premium-brand img{height:49px;width:min(150px,55%)}.dv-flash-premium-empty{padding:18px 0}}
