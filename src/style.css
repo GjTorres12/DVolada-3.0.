@@ -1023,3 +1023,19 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-food-detail-qty button{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
 .dv-food-detail-add{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:13px!important;padding:13px 10px!important}
 @media(max-width:600px){.dv-food-detail-backdrop{align-items:flex-end!important;padding:0!important}.dv-food-detail-modal{width:100%!important;max-height:calc(100dvh - 24px)!important;border-radius:26px 26px 0 0!important;margin:auto 0 0!important}.dv-food-detail-body{padding:15px 17px calc(24px + env(safe-area-inset-bottom,0px))}.dv-food-detail-hero{height:180px}.dv-food-detail-footer{gap:8px}.dv-food-detail-qty{gap:7px}.dv-food-detail-add{font-size:12px}}
+
+
+/* More options: remove native scrollbar strip and preserve full rounded edges */
+.dv-more-sheet,.dv32 .dv-more-sheet{
+ scrollbar-width:none!important;
+ -ms-overflow-style:none!important;
+ overflow-x:hidden!important;
+ overflow-y:auto!important;
+ border-radius:30px!important;
+ background-clip:padding-box!important;
+ clip-path:inset(0 round 30px)!important;
+}
+.dv-more-sheet::-webkit-scrollbar,.dv32 .dv-more-sheet::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+.dv-more-sheet .dv-more-symbol,.dv32 .dv-more-symbol{width:75px!important;height:48px!important;flex:none!important;overflow:visible!important;background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important}
+.dv-more-sheet .dv-more-symbol img,.dv32 .dv-more-symbol img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:transparent!important;border-radius:0!important;mix-blend-mode:normal!important}
+@media(max-width:540px){.dv-more-sheet,.dv32 .dv-more-sheet{border-radius:25px!important;clip-path:inset(0 round 25px)!important}}
