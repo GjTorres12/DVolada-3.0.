@@ -11,8 +11,8 @@ export default function GrowthFeatures({mode,orders=[],places=[],onOrderStatus=(
  const [coupon,setCoupon]=useState(()=>store('dv_demo_coupons',[]));
  const [driver,setDriver]=useState(()=>store('dv_demo_driver',{}));
  const [now,setNow]=useState(Date.now());
- const save=(k,v,set)=>{set(v);localStorage.setItem(k,JSON.stringify(v))};
- const available=promos.filter(p=>p.until>now);
+ const save=(k,v,set)=>{set(v);localStorage.setItem(k,JSON.stringify(v));if(k==='dv_flash_promos')window.dispatchEvent(new Event('dv-flash-updated'))};
+ const available=promos.filter(p=>p.active!==false&&p.until>now&&(p.stock==null||Number(p.stock)>0));
  const eligible=orders.filter(o=>o.kind==='food'&&(o.status==='Entregado'||(o.delivery==='pickup'&&o.status==='Recogido')));
  const points=eligible.length*10;
  const redeem=()=>{if(points-coupon.reduce((a,c)=>a+c.points,0)<100)return;save('dv_demo_coupons',[...coupon,{id:Date.now(),points:100,label:'Cupón demo L 15',used:false}],setCoupon);setCelebrate(true)};
