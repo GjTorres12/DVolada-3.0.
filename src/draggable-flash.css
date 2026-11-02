@@ -106,3 +106,34 @@
   right:auto!important;bottom:auto!important;
  }
 }
+
+
+/* Flash v4: tall classic lightning, warm orange, subtle motion (no neon) */
+@keyframes dv-flash-v4-float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes dv-flash-v4-sheen{0%,70%,100%{opacity:0}80%{opacity:.45}90%{opacity:0}}
+.dv32 .dv-flash-fab.dv-flash-draggable{
+ width:58px!important;height:76px!important;min-width:58px!important;
+ padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ border:0!important;background:transparent!important;box-shadow:none!important;
+ color:#f47829!important;filter:drop-shadow(0 4px 3px rgba(78,43,17,.28))!important;
+ animation:dv-flash-v4-float 3.2s ease-in-out infinite!important;
+}
+.dv32 .dv-flash-fab.dv-flash-draggable .dv-flash-custom-bolt{
+ display:block!important;width:37px!important;height:70px!important;
+ fill:#f47c2d!important;stroke:#ffb85e!important;stroke-width:1.25px!important;
+ stroke-linejoin:round!important;stroke-linecap:round!important;
+ filter:drop-shadow(0 2px 1px rgba(105,54,17,.45))!important;
+ animation:none!important;
+}
+.dv32 .dv-flash-fab.dv-flash-draggable::before,
+.dv32 .dv-flash-fab.dv-flash-draggable::after{display:none!important;content:none!important}
+.dv32 .dv-flash-fab.dv-flash-draggable.is-moving{animation:none!important}
+@media(max-width:900px){
+ .dv32 .dv-flash-fab.dv-flash-draggable:not([style*="top"]){
+  right:12px!important;bottom:calc(108px + env(safe-area-inset-bottom,0px))!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .dv32 .dv-flash-fab.dv-flash-draggable{animation:none!important}
+}
+html[data-reduce-animations="true"] .dv32 .dv-flash-fab.dv-flash-draggable{animation:none!important}
