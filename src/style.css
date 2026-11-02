@@ -866,3 +866,68 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .dv32 .hero-caption{display:none}
 }
 @media(prefers-reduced-motion:reduce){.dv32 .mobile-nav.dv-compact-nav>button{transition:none!important}}
+
+/* Visual review Nov 2026: restore glass navigation, readable account, Cloud branding */
+.dv32:not(.dv-welcome-mode) .topbar.dv-tools-header{
+ background:color-mix(in srgb,var(--surface) 76%,transparent)!important;
+ backdrop-filter:blur(22px) saturate(1.35)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(1.35)!important;
+ border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)!important;
+ box-shadow:0 8px 28px #16263a0d!important;
+}
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav{
+ background:color-mix(in srgb,var(--surface) 76%,transparent)!important;
+ backdrop-filter:blur(22px) saturate(1.35)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(1.35)!important;
+ border:1px solid color-mix(in srgb,var(--line) 55%,transparent)!important;
+ box-shadow:0 10px 36px #15253a23!important;
+}
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav>button{
+ color:var(--ink)!important;opacity:.75!important;background:transparent!important
+}
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav>button.active{
+ color:var(--accent,#f26732)!important;opacity:1!important;
+ background:color-mix(in srgb,var(--accent) 11%,transparent)!important;
+}
+.dv32 .dv-account-modern .page-heading{margin-bottom:22px}
+.dv32 .dv-account-modern .dv-batch3-box{
+ border:1px solid var(--line)!important;border-radius:16px!important;
+ background:color-mix(in srgb,var(--surface) 94%,transparent)!important;
+ margin:0 0 10px!important;padding:0!important;overflow:hidden;
+ box-shadow:0 4px 16px #00000007
+}
+.dv32 .dv-account-modern .dv-batch3-box>summary{
+ display:flex;align-items:center;gap:12px;list-style:none;
+ padding:17px 19px!important;min-height:58px;
+ font-size:14px;font-weight:700;line-height:1.4;color:var(--ink);
+ cursor:pointer;transition:background .15s ease
+}
+.dv32 .dv-account-modern .dv-batch3-box>summary::-webkit-details-marker{display:none}
+.dv32 .dv-account-modern .dv-batch3-box>summary:before{
+ content:'';width:6px;height:23px;border-radius:8px;
+ background:linear-gradient(180deg,#f59d4b,#ec632e);flex:0 0 6px
+}
+.dv32 .dv-account-modern .dv-batch3-box>summary:after{
+ content:'⌄';margin-left:auto;color:var(--muted);font-size:20px;font-weight:600
+}
+.dv32 .dv-account-modern .dv-batch3-box[open]>summary:after{transform:rotate(180deg)}
+.dv32 .dv-account-modern .dv-batch3-box>summary:hover{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+.dv32 .dv-account-modern .dv-batch3-box[open]{padding-bottom:15px!important}
+.dv32 .dv-account-modern .dv-batch3-box[open]>:not(summary){margin-left:19px;margin-right:19px}
+.dv32 .dv-account-modern .dv-batch3-box label{display:flex;gap:9px;align-items:center;margin-block:12px}
+.dv32 .dv-account-modern .dv-batch3-box input:not([type=checkbox]){max-width:calc(100% - 38px)}
+.dv32 .dv-cloud-plan-logo{display:block;width:min(190px,100%);max-height:48px;object-fit:contain;object-position:left center}
+.dv32 .dv-affiliate-page{padding-bottom:calc(120px + env(safe-area-inset-bottom))!important}
+.dv32 .dv-affiliate-page .plans{align-items:stretch}
+.dv32 .dv-affiliate-page .plan{min-width:0;overflow:hidden}
+.dv32 .dv-affiliate-page .plan h2{overflow-wrap:anywhere}
+@media(max-width:760px){
+ .dv32 .dv-affiliate-page .plans{grid-template-columns:1fr!important}
+ .dv32 .dv-account-modern .dv-batch3-box>summary{padding:15px!important}
+}
+@media(prefers-reduced-transparency:reduce){
+ .dv32:not(.dv-welcome-mode) .topbar.dv-tools-header,
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav{
+ background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
+ }
+}

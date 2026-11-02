@@ -1,1 +1,25 @@
 .dv-flash-draggable{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;cursor:grab;animation:dv-flash-charge 3.4s ease-in-out infinite!important;transition:box-shadow .2s ease!important}.dv-flash-draggable.is-moving{cursor:grabbing;animation:none!important;box-shadow:0 8px 24px #f27a3b9c!important;z-index:200!important}.dv-flash-draggable.is-moving::before,.dv-flash-draggable.is-moving::after,.dv-flash-draggable.is-moving svg{animation:none!important}.dv-flash-draggable:focus-visible{outline:3px solid #fff;outline-offset:3px}@media(prefers-reduced-motion:reduce){.dv-flash-draggable,.dv-flash-draggable::before,.dv-flash-draggable::after,.dv-flash-draggable svg{animation:none!important;transition:none!important}}
+
+/* Custom Dvolada Flash identity, transparent and legible in dark mode */
+.dv-flash-fab.dv-flash-draggable{
+ width:58px!important;height:58px!important;border:0!important;
+ background:transparent!important;box-shadow:none!important;
+ border-radius:18px!important;display:flex;align-items:center;justify-content:center;
+ padding:0!important;overflow:visible!important;
+ animation:none!important
+}
+.dv-flash-fab.dv-flash-draggable::before,.dv-flash-fab.dv-flash-draggable::after{
+ content:none!important;display:none!important
+}
+.dv-flash-wordmark{display:flex;flex-direction:column;align-items:center;justify-content:center;
+ width:58px;height:58px;filter:drop-shadow(0 3px 5px #0006);
+ user-select:none;line-height:1}
+.dv-flash-wordmark-d{font-size:37px;font-weight:1000;font-style:italic;letter-spacing:-5px;
+ background:linear-gradient(140deg,#ffb04c,#f25d24 65%,#de3b1d);
+ background-clip:text;-webkit-background-clip:text;color:transparent;
+ position:relative;padding-right:9px}
+.dv-flash-wordmark-d span{position:absolute;font-size:19px;right:-4px;top:-3px;letter-spacing:0;
+ color:#ffc24d;-webkit-text-fill-color:#ffc24d}
+.dv-flash-wordmark-name{font-size:10px;font-weight:1000;letter-spacing:1.5px;
+ color:#f27631;-webkit-text-stroke:.2px #9b390f}
+[data-theme=dark] .dv-flash-wordmark-name{color:#ffb75c;-webkit-text-stroke:0}
