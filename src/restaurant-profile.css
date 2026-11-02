@@ -36,3 +36,15 @@
 .dv-rp-inline-reviews{margin:12px 0;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:12px}
 .dv-rp-inline-reviews summary{cursor:pointer;font-weight:750}
 @media(max-width:650px){.dv-rp-inline-info{grid-template-columns:1fr;gap:7px}.dv-rp-inline-info>div{padding:10px 12px}}
+
+/* R03: resumen compacto con iconos en pantallas pequeñas */
+@media(max-width:650px){
+.dv-rp-inline-info{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:7px 12px!important;align-items:center!important}
+.dv-rp-inline-info>div{display:inline-flex!important;flex:0 1 auto!important;width:auto!important;min-width:0!important;align-items:center!important;gap:4px!important;padding:0!important;border:0!important;background:transparent!important}
+.dv-rp-inline-info>div svg{width:13px!important;height:13px!important;flex-shrink:0}
+.dv-rp-inline-info>div span{font-size:11px!important;display:inline!important;line-height:1.35}
+.dv-rp-inline-info>div strong{display:none!important}
+}
+.dv-rp-item-main img{width:92px;height:92px;object-fit:cover;border-radius:12px}
+.dv-rp-soldout{display:block;color:#c3541a;font-weight:700}
+.dv-rp-add:disabled{opacity:.55;cursor:not-allowed}
