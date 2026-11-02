@@ -24,3 +24,15 @@
 .dv-rp-review{border-radius:14px;padding:12px;background:var(--soft,#f5f5f5);margin-bottom:9px}
 .dv-rp-review strong{display:inline-flex;align-items:center;gap:5px}
 .dv-rp-review p{margin-bottom:0}
+
+
+/* Restaurant facts displayed directly on the profile */
+.dv-rp-name-inline{font-size:clamp(24px,3vw,34px);margin:0 0 10px;line-height:1.15}
+.dv-rp-inline-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 4px}
+.dv-rp-inline-info>div{display:flex;align-items:flex-start;gap:9px;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-size:12px;min-width:0;overflow-wrap:anywhere}
+.dv-rp-inline-info>div>svg{color:var(--accent);flex-shrink:0}
+.dv-rp-inline-info span{display:grid;gap:5px;color:var(--muted)}
+.dv-rp-inline-info strong{font-size:12px;color:var(--ink)}
+.dv-rp-inline-reviews{margin:12px 0;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:12px}
+.dv-rp-inline-reviews summary{cursor:pointer;font-weight:750}
+@media(max-width:650px){.dv-rp-inline-info{grid-template-columns:1fr;gap:7px}.dv-rp-inline-info>div{padding:10px 12px}}
