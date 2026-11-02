@@ -1255,3 +1255,35 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  .dv32.dv-welcome-mode .dv-welcome-about small{font-size:11px;color:var(--muted)}
 }
 @media(min-width:901px){.dv-welcome-about{display:none}}
+
+
+/* Customer mobile header: protect logo from address and tool overlap */
+@media(max-width:900px){
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .header-inner{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  flex-wrap:nowrap!important;gap:6px!important;min-width:0!important;
+ }
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .brand{
+  flex:0 0 auto!important;min-width:0!important;max-width:42%!important;
+ }
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .dv-top-tools{
+  flex:0 1 auto!important;min-width:0!important;gap:4px!important;
+ }
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .dv-location-wrap{
+  max-width:38px!important;flex:0 0 38px!important;
+ }
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .dv-location-trigger{
+  width:36px!important;min-width:36px!important;height:36px!important;padding:0!important;
+  justify-content:center!important;overflow:hidden!important;
+ }
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .dv-location-trigger>span{display:none!important}
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header .dv-location-panel{
+  position:fixed!important;left:12px!important;right:12px!important;top:82px!important;
+  width:auto!important;max-width:420px!important;margin:0 auto!important;z-index:500!important;
+ }
+}
+.dv-more-appearance{margin:16px 0 10px;padding:13px;border:1px solid color-mix(in srgb,var(--line) 70%,transparent);border-radius:18px;background:rgba(255,154,74,.045)}
+.dv-more-appearance>span{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:750;margin-bottom:10px}
+.dv-more-theme-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.dv-more-theme-choices button{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;padding:10px 5px;border-radius:12px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 78%,transparent);font-size:12px;color:var(--ink)}
+.dv-more-theme-choices button.active{border-color:rgba(244,119,47,.52);background:rgba(255,153,67,.14);font-weight:800}
