@@ -137,3 +137,35 @@
  .dv32 .dv-flash-fab.dv-flash-draggable{animation:none!important}
 }
 html[data-reduce-animations="true"] .dv32 .dv-flash-fab.dv-flash-draggable{animation:none!important}
+
+
+/* Flash official: orange circular button, white bolt, restrained electric current */
+@keyframes dv-flash-ring-current{0%,100%{transform:rotate(0deg);opacity:.35}45%{opacity:.85}100%{transform:rotate(360deg)}}
+@keyframes dv-flash-soft-pulse{0%,100%{box-shadow:0 5px 16px rgba(245,104,27,.28)}50%{box-shadow:0 6px 22px rgba(245,104,27,.55)}}
+.dv32 .dv-flash-fab.dv-flash-draggable{
+ width:62px!important;height:62px!important;min-width:62px!important;
+ border-radius:50%!important;border:2px solid rgba(255,255,255,.65)!important;
+ background:linear-gradient(145deg,#ffad36,#f56c21 65%,#e9571b)!important;
+ color:#fff!important;filter:none!important;
+ animation:dv-flash-soft-pulse 3.6s ease-in-out infinite!important;
+ overflow:visible!important;
+}
+.dv32 .dv-flash-fab.dv-flash-draggable .dv-flash-custom-bolt{
+ width:30px!important;height:45px!important;
+ fill:#fff!important;stroke:#fff!important;stroke-width:1px!important;
+ filter:drop-shadow(0 1px 3px rgba(126,49,0,.28))!important;
+ animation:none!important;
+}
+.dv32 .dv-flash-fab.dv-flash-draggable::before{
+ content:''!important;display:block!important;position:absolute!important;inset:-5px!important;
+ border-radius:50%!important;border:2px dashed rgba(255,190,87,.85)!important;
+ background:none!important;mask:none!important;
+ pointer-events:none!important;animation:dv-flash-ring-current 5s linear infinite!important;
+}
+.dv32 .dv-flash-fab.dv-flash-draggable::after{content:none!important;display:none!important}
+.dv32 .dv-flash-fab.dv-flash-draggable.is-moving,
+html[data-reduce-animations="true"] .dv32 .dv-flash-fab.dv-flash-draggable{animation:none!important}
+.dv32 .dv-flash-fab.dv-flash-draggable.is-moving::before{animation:none!important}
+@media(prefers-reduced-motion:reduce){
+ .dv32 .dv-flash-fab.dv-flash-draggable,.dv32 .dv-flash-fab.dv-flash-draggable::before{animation:none!important}
+}
