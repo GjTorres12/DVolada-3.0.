@@ -83,3 +83,12 @@
 [data-theme="dark"] .dv-flash-official-logo .dv-flash-logo-dark{mix-blend-mode:screen}
 .dv-flash-premium-brand{gap:0!important}
 @media(max-width:520px){.dv-flash-official-logo{height:65px!important;width:min(205px,76%)!important}}
+
+
+/* Original official PNGs: blend their solid backgrounds into the Flash card.
+   Important: no isolation, otherwise screen/multiply cannot blend with the panel. */
+.dv-flash-official-logo{isolation:auto!important;background:transparent!important;overflow:visible!important}
+.dv-flash-premium-brand{isolation:auto!important;background:transparent!important}
+.dv-flash-dialog .dv-flash-premium-hero{isolation:auto!important}
+.dv-flash-dialog .dv-flash-logo-dark{mix-blend-mode:screen!important}
+.dv-flash-dialog .dv-flash-logo-light{mix-blend-mode:multiply!important}
