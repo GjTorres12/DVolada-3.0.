@@ -1301,3 +1301,13 @@ html[data-reduce-animations="true"] .dv32 :is(.topbar.dv-tools-header,.mobile-na
  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
 }
 html[data-reduce-animations="true"] .dv32 :is(.dv-food-detail-backdrop,.dv-more-backdrop,.modal-backdrop){backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+
+/* Auditoría R02-R09: enlaces y buscador */
+.dv-shelf-name-link{border:0;background:transparent;color:inherit;font:inherit;font-weight:inherit;text-align:left;cursor:pointer;padding:0}
+.dv-shelf-name-link:hover{text-decoration:underline}
+.dv-shelf-avatar[role="button"]{cursor:pointer}
+.dv-shelf-avatar[role="button"]:focus-visible,.dv-shelf-name-link:focus-visible{outline:2px solid #ee7928;outline-offset:3px}
+.dv-search-clear{border:0;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:6px;color:inherit}
+.dv-shelf-food:disabled{opacity:.55;cursor:not-allowed;filter:grayscale(.35)}
+/* El diálogo de confirmación tiene prioridad visual sobre las barras de navegación */
+body:has(.modal-backdrop) .bottom-bar,body:has(.modal-backdrop) .dv-bottom-nav,body:has(.modal-backdrop) .mobile-bottom-nav{visibility:hidden}
