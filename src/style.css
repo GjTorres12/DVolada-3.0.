@@ -1159,3 +1159,31 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv32 :is(.modal-backdrop,.dv-more-backdrop,.dv-food-detail-backdrop){overscroll-behavior:contain;touch-action:pan-y}
 .dv32 :is(.modal,.dv-more-sheet,.dv-food-detail-modal,.dv-location-panel){overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 @media(prefers-reduced-motion:reduce){.dv32:not(.dv-welcome-mode):not(.dv-role-mode) :is(.dv-more-sheet button,.dv-location-panel button,.dv-food-detail-modal button,.dv-food-feed-heart,.dv-home-category-chip){transition:none!important}}
+
+
+/* Mobile welcome: continuous background through the entire scrollable panel */
+@media(max-width:900px){
+ .dv32.dv-welcome-mode{
+  min-height:100dvh!important;
+  background:linear-gradient(165deg,rgba(255,159,72,.15) 0%,rgba(255,196,113,.12) 48%,rgba(255,140,59,.13) 100%),var(--bg)!important;
+ }
+ .dv32.dv-welcome-mode main,
+ .dv32.dv-welcome-mode .welcome-screen{
+  min-height:100dvh!important;
+  height:auto!important;
+  overflow:visible!important;
+ }
+ .dv32.dv-welcome-mode .welcome-screen{
+  align-items:stretch!important;
+  background:radial-gradient(ellipse at 5% 90%,rgba(255,169,77,.19),transparent 55%),
+             radial-gradient(ellipse at 95% 5%,rgba(255,131,49,.17),transparent 52%)!important;
+ }
+ .dv32.dv-welcome-mode .welcome-panel{
+  min-height:100dvh!important;
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+  padding-bottom:max(44px,env(safe-area-inset-bottom,0px))!important;
+  background:transparent!important;
+ }
+}
