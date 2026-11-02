@@ -66,3 +66,12 @@
 [data-theme=dark] .dv-flash-dialog .dv-flash-premium-meta span,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-tag,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-offer{background:#ffffff12!important;border-color:#ffffff2c!important}
 [data-theme=dark] .dv-flash-dialog .dv-flash-premium-hero p,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-empty p,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-offer p{color:#cbd0d7!important}
 @media(max-width:520px){.dv-flash-dialog .dv-flash-premium-hero{padding:23px 20px 19px!important}.dv-flash-dialog .dv-flash-premium-content{padding:17px 20px 23px!important}.dv-flash-dialog .dv-flash-premium-brand img{height:49px!important}}
+
+
+/* Switch original Flash artwork with Dvolada's selected theme */
+.dv-flash-official-logo{display:block;width:min(225px,67%);height:76px;position:relative;flex:none}
+.dv-flash-official-logo img,.dv-flash-dialog .dv-flash-premium-brand .dv-flash-official-logo img{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:100%;object-fit:contain;object-position:left center}
+.dv-flash-logo-dark{display:none!important}
+[data-theme="dark"] .dv-flash-logo-light{display:none!important}
+[data-theme="dark"] .dv-flash-logo-dark{display:block!important}
+@media(max-width:520px){.dv-flash-official-logo{height:57px;width:min(185px,65%)}}
