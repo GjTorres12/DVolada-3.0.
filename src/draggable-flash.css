@@ -81,3 +81,28 @@
  }
 }
 @media(hover:hover) and (pointer:fine){.dv32 .dv-flash-fab.dv-flash-draggable:hover{filter:drop-shadow(0 3px 5px rgba(110,51,13,.45)) drop-shadow(0 0 12px rgba(255,151,46,.55));transform:scale(1.06)}}
+
+
+/* Flash v3: bold standalone bolt, reliably visible on phones */
+.dv32 .dv-flash-fab.dv-flash-draggable{
+ display:flex!important;visibility:visible!important;opacity:1!important;
+ width:66px!important;height:70px!important;min-width:66px!important;
+ border:none!important;background:transparent!important;box-shadow:none!important;
+ color:#ff8c20!important;overflow:visible!important;
+ filter:drop-shadow(0 3px 1px rgba(112,54,16,.42)) drop-shadow(0 0 9px rgba(255,163,53,.45))!important;
+}
+.dv32 .dv-flash-fab.dv-flash-draggable svg{
+ width:51px!important;height:58px!important;
+ stroke:#ffe0a5!important;stroke-width:1.8px!important;
+ fill:#ff921f!important;filter:drop-shadow(0 1px 1px rgba(123,57,7,.7))!important;
+}
+@media(max-width:900px){
+ .dv32 .dv-flash-fab.dv-flash-draggable{
+  position:fixed!important;z-index:9990!important;
+  right:12px!important;
+  bottom:calc(108px + env(safe-area-inset-bottom,0px))!important;
+ }
+ .dv32 .dv-flash-fab.dv-flash-draggable[style*="top"]{
+  right:auto!important;bottom:auto!important;
+ }
+}
