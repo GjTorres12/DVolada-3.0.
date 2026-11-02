@@ -5,3 +5,9 @@ let source=readFileSync(path,'utf8');
 source=source.replace(/const CACHE='dvolada-shell-[^']+';/,`const CACHE='dvolada-shell-${version}';`);
 writeFileSync(path,source+'\n// Build: '+version+'\n');
 console.log('PWA build:',version);
+
+// Publish a lightweight build manifest for active desktop and mobile sessions.
+writeFileSync('dist/version.json',JSON.stringify({version,updatedAt:new Date().toISOString()})+'\n');
+const indexPath='dist/index.html';
+const index=readFileSync(indexPath,'utf8');
+writeFileSync(indexPath,index.replace('</head>',`<meta name="dvolada-build" content="${version}"/></head>`));
