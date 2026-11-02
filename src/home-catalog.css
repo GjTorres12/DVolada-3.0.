@@ -48,3 +48,14 @@
 .dv-shelf-food-bottom small{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted)}
 .dv-shelf-empty{color:var(--muted);padding:20px}
 @media(max-width:600px){.dv-home-food-feed{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important}.dv-food-feed-info{padding:10px}.dv-food-feed-info strong{font-size:13px}.dv-food-feed-details b{font-size:15px}.dv-shelf-track{gap:10px}.dv-shelf-food{flex-basis:155px}.dv-shelf-heading h2{font-size:20px}.dv-shelf-visit{font-size:11px}}
+
+
+/* Small discovery rail between food collections */
+.dv-home-discovery{padding-top:10px!important;padding-bottom:10px!important}
+.dv-home-discovery-top h2{font-size:clamp(18px,2.5vw,24px);margin:5px 0 14px}
+.dv-home-discovery-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dv-home-discovery-actions button{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:66px;padding:15px 17px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:17px;font-weight:750;text-align:left;cursor:pointer;transition:transform .2s,border-color .2s}
+.dv-home-discovery-actions button:hover{transform:translateY(-2px);border-color:var(--accent)}
+.dv-home-discovery-actions button>svg:first-child{color:var(--accent);flex-shrink:0}
+.dv-home-discovery-actions button>svg:last-child{margin-left:auto;flex-shrink:0}
+@media(max-width:600px){.dv-home-discovery-actions{grid-template-columns:1fr;gap:8px}.dv-home-discovery-actions button{min-height:52px;padding:12px 15px}}
