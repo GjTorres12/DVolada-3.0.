@@ -997,3 +997,29 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-more-topline button{cursor:pointer;position:relative;z-index:2}
 @media(min-width:800px){.dv-more-backdrop{align-items:center!important}.dv-more-sheet,.dv32 .dv-more-sheet{margin:0 auto!important;border-radius:30px!important;max-height:82dvh!important}}
 @media(max-width:540px){.dv-more-backdrop{padding:10px!important}.dv-more-sheet,.dv32 .dv-more-sheet{border-radius:25px!important;margin-bottom:calc(67px + env(safe-area-inset-bottom,0px))!important;max-height:calc(100dvh - 110px)!important}}
+
+
+/* Product detail: photo-first overlay, stays on current page */
+.dv-food-detail-backdrop{position:fixed!important;inset:0!important;z-index:11000!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:20px 14px!important;background:rgba(7,11,17,.64)!important;backdrop-filter:blur(7px)!important;overflow-y:auto!important;box-sizing:border-box}
+.dv-food-detail-modal{position:relative!important;width:min(100%,490px)!important;max-height:min(90dvh,820px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:0!important;border-radius:26px!important;background:var(--surface)!important;box-shadow:0 26px 90px #0006!important;display:block!important;margin:auto!important;border:1px solid color-mix(in srgb,var(--line) 65%,transparent)!important}
+.dv-food-detail-close{position:sticky;top:12px;float:right;margin:12px 12px -56px 0;z-index:5;width:40px;height:40px;display:grid;place-items:center;border:1px solid #ffffff75;border-radius:50%;background:#17202bcf;color:white;cursor:pointer;box-shadow:0 4px 16px #0004}
+.dv-food-detail-hero{height:clamp(160px,27vh,240px);background:linear-gradient(140deg,#f3a866,#ef5b29);overflow:hidden}
+.dv-food-detail-hero img{width:100%;height:100%;object-fit:cover}
+.dv-food-detail-body{padding:20px 22px 22px}
+.dv-food-detail-restaurant{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-weight:700}
+.dv-food-detail-body h2{font-size:clamp(22px,4vw,28px);line-height:1.15;margin:7px 0 12px}
+.dv-food-detail-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.dv-food-detail-meta strong{color:var(--accent);font-size:23px}
+.dv-food-detail-meta span{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+.dv-food-detail-body h3{font-size:15px;margin:20px 0 4px}
+.dv-food-detail-hint{font-size:12px;color:var(--muted);margin:0 0 10px}
+.dv-food-detail-extras{display:grid;gap:7px;margin-bottom:18px}
+.dv-food-detail-extra{display:flex!important;justify-content:space-between;align-items:center;gap:15px;padding:11px 13px!important;background:color-mix(in srgb,var(--surface) 85%,var(--ink) 5%);border:1px solid var(--line);border-radius:12px;font-size:13px;cursor:pointer}
+.dv-food-detail-extra input{width:18px;height:18px;accent-color:var(--accent)}
+.dv-food-detail-label{font-size:12px;font-weight:750;display:block;margin-bottom:7px}
+.dv-food-detail-body textarea{width:100%;min-height:58px;max-height:110px;resize:vertical;border-radius:13px;padding:12px;box-sizing:border-box}
+.dv-food-detail-footer{display:flex;gap:12px;align-items:center;margin-top:15px}
+.dv-food-detail-qty{display:flex;align-items:center;gap:12px;flex:none}
+.dv-food-detail-qty button{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.dv-food-detail-add{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:13px!important;padding:13px 10px!important}
+@media(max-width:600px){.dv-food-detail-backdrop{align-items:flex-end!important;padding:0!important}.dv-food-detail-modal{width:100%!important;max-height:calc(100dvh - 24px)!important;border-radius:26px 26px 0 0!important;margin:auto 0 0!important}.dv-food-detail-body{padding:15px 17px calc(24px + env(safe-area-inset-bottom,0px))}.dv-food-detail-hero{height:180px}.dv-food-detail-footer{gap:8px}.dv-food-detail-qty{gap:7px}.dv-food-detail-add{font-size:12px}}
