@@ -1187,3 +1187,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   background:transparent!important;
  }
 }
+
+
+/* Liquid Glass fine tuning: nearly clear glass with a whisper of orange */
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) :is(.topbar.dv-tools-header,.mobile-nav.dv-compact-nav){
+ background-color:color-mix(in srgb,var(--surface) 43%,transparent)!important;
+ background-image:linear-gradient(115deg,rgba(255,150,72,.045),transparent 48%,rgba(255,139,65,.035))!important;
+ backdrop-filter:blur(18px) saturate(1.18)!important;
+ -webkit-backdrop-filter:blur(18px) saturate(1.18)!important;
+}
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) :is(.topbar.dv-tools-header,.mobile-nav.dv-compact-nav)::before{
+ background:linear-gradient(115deg,rgba(255,185,125,.075),transparent 44%,rgba(255,147,77,.035))!important;
+ opacity:.55!important;
+}
+[data-theme="dark"] .dv32:not(.dv-welcome-mode):not(.dv-role-mode) :is(.topbar.dv-tools-header,.mobile-nav.dv-compact-nav){
+ background-color:color-mix(in srgb,var(--surface) 54%,transparent)!important;
+ background-image:linear-gradient(115deg,rgba(255,150,72,.035),transparent 55%,rgba(255,139,65,.025))!important;
+}
+@media(hover:hover) and (pointer:fine){
+ .dv32:not(.dv-welcome-mode):not(.dv-role-mode) :is(.topbar.dv-tools-header .dv-top-tools button,.topbar.dv-tools-header .brand,.mobile-nav.dv-compact-nav>button):hover{
+  background-color:rgba(255,155,77,.055)!important;
+ }
+}
