@@ -23,3 +23,36 @@
 .dv-flash-wordmark-name{font-size:10px;font-weight:1000;letter-spacing:1.5px;
  color:#f27631;-webkit-text-stroke:.2px #9b390f}
 [data-theme=dark] .dv-flash-wordmark-name{color:#ffb75c;-webkit-text-stroke:0}
+
+/* Restore the original animated Flash bubble, preserving drag support */
+.dv-flash-fab.dv-flash-draggable{
+ width:64px!important;height:64px!important;
+ border:2px solid #fff5!important;border-radius:22px!important;
+ background:linear-gradient(140deg,#ffb02e,#ff612c)!important;
+ color:#fff!important;box-shadow:0 9px 26px #fa6d3c75!important;
+ animation:dv-flash-charge 3.4s ease-in-out infinite!important;
+ padding:0!important;overflow:visible!important
+}
+.dv-flash-fab.dv-flash-draggable::before{
+ content:''!important;display:block!important;position:absolute;inset:-5px;border-radius:25px;
+ border:2px solid transparent;
+ background:conic-gradient(from 0deg,transparent 0deg,#fff6a6 48deg,#fff 66deg,transparent 95deg,transparent 360deg) border-box;
+ mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);
+ mask-composite:exclude;pointer-events:none;animation:dv-flash-current 3.4s linear infinite
+}
+.dv-flash-fab.dv-flash-draggable::after{
+ content:''!important;display:block!important;position:absolute;inset:6px;border-radius:16px;
+ background:linear-gradient(125deg,transparent 20%,#fff9 45%,transparent 65%);
+ opacity:0;transform:translateX(-80%);pointer-events:none;
+ animation:dv-flash-sweep 3.4s ease-in-out infinite
+}
+.dv-flash-fab.dv-flash-draggable svg{
+ display:block;position:relative;z-index:1;
+ filter:drop-shadow(0 0 4px #fff8);animation:dv-flash-bolt 3.4s ease-in-out infinite!important
+}
+.dv-flash-fab.dv-flash-draggable.is-moving{animation:none!important}
+.dv-flash-fab.dv-flash-draggable.is-moving::before,.dv-flash-fab.dv-flash-draggable.is-moving::after,.dv-flash-fab.dv-flash-draggable.is-moving svg{animation:none!important}
+@media(prefers-reduced-motion:reduce){
+ .dv-flash-fab.dv-flash-draggable,.dv-flash-fab.dv-flash-draggable::before,.dv-flash-fab.dv-flash-draggable::after,.dv-flash-fab.dv-flash-draggable svg{animation:none!important}
+ .dv-flash-fab.dv-flash-draggable::before,.dv-flash-fab.dv-flash-draggable::after{display:none!important}
+}
