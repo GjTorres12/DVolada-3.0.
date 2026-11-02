@@ -75,3 +75,11 @@
 [data-theme="dark"] .dv-flash-logo-light{display:none!important}
 [data-theme="dark"] .dv-flash-logo-dark{display:block!important}
 @media(max-width:520px){.dv-flash-official-logo{height:57px;width:min(185px,65%)}}
+
+
+/* Make flat background of original Flash PNG visually blend with its panel */
+.dv-flash-official-logo{width:min(250px,78%)!important;height:85px!important;isolation:isolate}
+.dv-flash-official-logo .dv-flash-logo-light{mix-blend-mode:multiply}
+[data-theme="dark"] .dv-flash-official-logo .dv-flash-logo-dark{mix-blend-mode:screen}
+.dv-flash-premium-brand{gap:0!important}
+@media(max-width:520px){.dv-flash-official-logo{height:65px!important;width:min(205px,76%)!important}}
