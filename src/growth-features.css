@@ -4,3 +4,11 @@
 
 /* Courier demo workflow tools */
 .gx-courier-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.gx-courier-toolbar h2{margin:0}.gx-courier-tools label,.gx-courier-incidents label,.gx-courier-note{display:grid;gap:6px;font-size:13px;font-weight:600;margin:10px 0}.gx-courier-tools select,.gx-courier-incidents select,.gx-courier-incidents textarea,.gx-courier-note textarea{width:100%;border-radius:12px;padding:11px;border:1px solid #9995;background:transparent;color:inherit;font:inherit}.gx-courier-incidents form{display:grid;gap:8px}.gx-courier-incidents .gx-row{margin-top:12px}.gx-courier-incidents .gx-row span{min-width:0;overflow-wrap:anywhere}@media(max-width:640px){.gx-courier-toolbar{align-items:stretch;flex-direction:column}.gx-courier-toolbar button{width:100%}}
+
+/* Brand-adaptive Dvolada Flash header: transparent logo, no white icon tile */
+.gx-flash-brand.dv-flash-logo-lockup{display:block;max-width:min(100%,340px);height:auto;margin:0 0 8px;background:transparent!important;padding:0!important}
+.gx-flash-brand.dv-flash-logo-lockup img{display:block;width:100%;height:auto;max-height:135px;object-fit:contain;object-position:left center;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.gx-flash-brand.dv-flash-logo-lockup .dv-flash-logo-dark{display:none}
+:root[data-theme="dark"] .gx-flash-brand.dv-flash-logo-lockup .dv-flash-logo-light{display:none}
+:root[data-theme="dark"] .gx-flash-brand.dv-flash-logo-lockup .dv-flash-logo-dark{display:block}
+@media(max-width:520px){.gx-flash-brand.dv-flash-logo-lockup{max-width:245px}.gx-flash-brand.dv-flash-logo-lockup img{max-height:95px}}
