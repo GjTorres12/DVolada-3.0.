@@ -1287,3 +1287,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-more-theme-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
 .dv-more-theme-choices button{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;padding:10px 5px;border-radius:12px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 78%,transparent);font-size:12px;color:var(--ink)}
 .dv-more-theme-choices button.active{border-color:rgba(244,119,47,.52);background:rgba(255,153,67,.14);font-weight:800}
+
+
+/* Customer-controlled low-motion mode; persists between visits */
+.dv-more-motion-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px;padding:12px 2px 2px;cursor:pointer}
+.dv-more-motion-toggle>span{font-size:13px;font-weight:700;display:flex;flex-direction:column;gap:4px}
+.dv-more-motion-toggle small{font-size:11px;font-weight:400;color:var(--muted)}
+.dv-more-motion-toggle input{width:21px;height:21px;flex-shrink:0;accent-color:#f58235;cursor:pointer}
+html[data-reduce-animations="true"] .dv32 *,html[data-reduce-animations="true"] .dv32 *::before,html[data-reduce-animations="true"] .dv32 *::after{
+ animation:none!important;transition:none!important;scroll-behavior:auto!important;
+}
+html[data-reduce-animations="true"] .dv32 :is(.topbar.dv-tools-header,.mobile-nav.dv-compact-nav,.dv-more-sheet,.dv-food-detail-modal,.modal,.dv-location-panel){
+ backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+html[data-reduce-animations="true"] .dv32 :is(.dv-food-detail-backdrop,.dv-more-backdrop,.modal-backdrop){backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
