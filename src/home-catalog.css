@@ -16,3 +16,35 @@
 .dv-global-food-card strong{font-size:14px}.dv-global-food-card small{color:var(--muted)}.dv-global-food-card>span{font-weight:900;color:var(--accent)}
 .dv-more-refresh{width:100%;display:flex;justify-content:center;align-items:center;gap:8px;padding:11px;margin-bottom:12px;border-radius:13px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:800;cursor:pointer}
 @media(max-width:520px){.dv-global-food-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dv-catalog-switch button{font-size:12px}.dv-preview-item{flex-basis:116px}}
+
+/* Food-first homepage: continuous vertical discovery grid */
+.dv-home-food-feed{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))!important;gap:18px!important;align-items:stretch}
+.dv-food-feed-card{display:flex!important;flex-direction:column;text-align:left;min-width:0;border-radius:20px!important;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:0 5px 20px #00000008;transition:transform .22s,box-shadow .22s}
+.dv-food-feed-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px #00000013}
+.dv-food-feed-card .dv-global-food-photo{width:100%;aspect-ratio:1.28;overflow:hidden;border-radius:0!important}
+.dv-food-feed-card .dv-global-food-photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.dv-food-feed-card:hover img{transform:scale(1.045)}
+.dv-food-feed-info{padding:14px;display:grid;gap:7px;flex:1}
+.dv-food-feed-info strong{font-size:15px;line-height:1.35}
+.dv-food-feed-info small{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:12px}
+.dv-food-feed-details{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.dv-food-feed-details b{color:var(--accent);font-size:17px}
+.dv-food-feed-details span{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--muted)}
+/* Netflix-like restaurant rows: independent horizontal swipe per restaurant */
+.dv-restaurant-shelves{display:grid;gap:30px;margin-top:24px;min-width:0}
+.dv-restaurant-shelf{min-width:0}
+.dv-shelf-heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:14px}
+.dv-shelf-eyebrow{display:block;color:var(--accent);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:5px}
+.dv-shelf-heading h2{font-size:clamp(20px,2.6vw,27px);margin:0}
+.dv-shelf-visit{display:inline-flex;align-items:center;gap:2px;color:var(--accent);font-size:12px;font-weight:800;white-space:nowrap;padding:7px 0}
+.dv-shelf-track{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding:4px;padding:2px 2px 15px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.dv-shelf-food{flex:0 0 clamp(165px,21vw,225px);min-width:0;text-align:left;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;padding:0 0 13px;box-shadow:0 5px 18px #00000009;transition:transform .2s}
+.dv-shelf-food:hover{transform:translateY(-3px)}
+.dv-shelf-photo{width:100%;aspect-ratio:1.3;overflow:hidden;background:var(--soft);display:grid;place-items:center}
+.dv-shelf-photo img{width:100%;height:100%;object-fit:cover}
+.dv-shelf-food>strong{padding:12px 12px 5px;font-size:14px;line-height:1.3}
+.dv-shelf-food-bottom{display:flex;justify-content:space-between;gap:5px;align-items:center;flex-wrap:wrap;margin-top:auto;padding:0 12px}
+.dv-shelf-food-bottom b{color:var(--accent);font-size:15px}
+.dv-shelf-food-bottom small{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted)}
+.dv-shelf-empty{color:var(--muted);padding:20px}
+@media(max-width:600px){.dv-home-food-feed{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important}.dv-food-feed-info{padding:10px}.dv-food-feed-info strong{font-size:13px}.dv-food-feed-details b{font-size:15px}.dv-shelf-track{gap:10px}.dv-shelf-food{flex-basis:155px}.dv-shelf-heading h2{font-size:20px}.dv-shelf-visit{font-size:11px}}
