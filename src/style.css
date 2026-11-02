@@ -1039,3 +1039,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .dv-more-sheet .dv-more-symbol,.dv32 .dv-more-symbol{width:75px!important;height:48px!important;flex:none!important;overflow:visible!important;background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important}
 .dv-more-sheet .dv-more-symbol img,.dv32 .dv-more-symbol img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:transparent!important;border-radius:0!important;mix-blend-mode:normal!important}
 @media(max-width:540px){.dv-more-sheet,.dv32 .dv-more-sheet{border-radius:25px!important;clip-path:inset(0 round 25px)!important}}
+
+
+/* Restore airy liquid-glass navigation on desktop and mobile */
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header{
+ background:color-mix(in srgb,var(--surface) 52%,transparent)!important;
+ backdrop-filter:blur(19px) saturate(1.55)!important;
+ -webkit-backdrop-filter:blur(19px) saturate(1.55)!important;
+ border-color:rgba(255,255,255,.37)!important;
+ box-shadow:0 9px 30px #0c1a3014,inset 0 1px 0 #ffffff57!important;
+}
+.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav{
+ background:color-mix(in srgb,var(--surface) 49%,transparent)!important;
+ backdrop-filter:blur(20px) saturate(1.55)!important;
+ -webkit-backdrop-filter:blur(20px) saturate(1.55)!important;
+ border:1px solid rgba(255,255,255,.36)!important;
+ box-shadow:0 12px 34px #15253a22,inset 0 1px 0 #ffffff45!important;
+}
+[data-theme="dark"] .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header,
+[data-theme="dark"] .dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav{border-color:#ffffff2b!important;box-shadow:0 12px 36px #0005,inset 0 1px 0 #ffffff1a!important}
+/* Less intense overlay: let customer keep visual context of the home catalog */
+.dv-food-detail-backdrop{background:rgba(12,18,25,.27)!important;backdrop-filter:blur(1.5px)!important;-webkit-backdrop-filter:blur(1.5px)!important}
+@media(prefers-reduced-transparency:reduce){.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .topbar.dv-tools-header,.dv32:not(.dv-welcome-mode):not(.dv-role-mode) .mobile-nav.dv-compact-nav{background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
