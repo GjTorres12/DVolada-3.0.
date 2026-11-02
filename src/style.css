@@ -931,3 +931,34 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
  }
 }
+
+/* More options: clean frosted glass panel and brand D without orange tile */
+.dv32 .dv-more-backdrop{background:rgba(10,17,27,.32)!important;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.dv32 .dv-more-sheet{
+ background:color-mix(in srgb,var(--surface) 79%,transparent)!important;
+ backdrop-filter:blur(26px) saturate(1.35)!important;
+ -webkit-backdrop-filter:blur(26px) saturate(1.35)!important;
+ border:1px solid color-mix(in srgb,var(--line) 65%,transparent)!important;
+ border-bottom:0!important;
+ box-shadow:0 -18px 60px #0a162b35!important;
+ max-height:min(85dvh,800px);overflow-y:auto;overscroll-behavior:contain
+}
+.dv32 .dv-more-symbol{
+ background:transparent!important;box-shadow:none!important;
+ border:0!important;border-radius:0!important;width:54px;height:54px;
+ display:flex;align-items:center;justify-content:center;padding:0!important
+}
+.dv32 .dv-more-symbol img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 5px #0002)}
+.dv32 .dv-more-grid button{
+ background:color-mix(in srgb,var(--surface) 66%,transparent)!important;
+ border:1px solid color-mix(in srgb,var(--line) 65%,transparent)!important;
+ min-height:59px;border-radius:15px!important;box-shadow:none!important
+}
+.dv32 .dv-more-grid button svg{background:transparent!important;padding:0!important;width:20px;height:20px;box-sizing:border-box;border-radius:0!important;color:var(--accent,#ef7135)}
+.dv32 .dv-more-close{
+ background:color-mix(in srgb,var(--surface) 65%,transparent)!important;
+ color:var(--ink)!important;border:1px solid var(--line)!important;
+ box-shadow:none!important
+}
+@media(max-width:480px){.dv32 .dv-more-sheet{padding:12px 16px max(22px,env(safe-area-inset-bottom))}.dv32 .dv-more-grid{gap:8px!important}.dv32 .dv-more-grid button{padding:11px!important;font-size:12px}}
+@media(prefers-reduced-transparency:reduce){.dv32 .dv-more-sheet{background:var(--surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
