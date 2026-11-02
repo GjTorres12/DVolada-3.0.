@@ -44,3 +44,25 @@
 .dv-flash-premium-empty h2{font-size:clamp(21px,4vw,27px);line-height:1.2;max-width:350px;margin:10px 0}
 .dv-flash-premium-empty p{font-size:13px;color:var(--muted);max-width:350px;line-height:1.6;margin-bottom:22px}
 @media(max-width:520px){.dv-flash-premium-hero{padding:22px 19px 20px}.dv-flash-premium-content{padding:18px}.dv-flash-premium-brand{margin-bottom:18px}.dv-flash-premium-brand img{height:49px;width:min(150px,55%)}.dv-flash-premium-empty{padding:18px 0}}
+
+
+/* Integrated glass panels; remove opaque white card effect */
+.dv-flash-dialog .dv-flash-premium{background:transparent!important;border-radius:inherit!important;color:var(--ink)}
+.dv-flash-dialog .dv-flash-premium-hero{padding:30px 32px 22px;background:linear-gradient(125deg,rgba(255,255,255,.48),rgba(255,235,209,.22) 65%,transparent)!important;border-bottom:1px solid rgba(255,255,255,.48)!important}
+.dv-flash-dialog .dv-flash-premium-content{padding:22px 32px 30px!important;background:transparent!important}
+.dv-flash-dialog .dv-flash-premium-brand{margin-bottom:14px!important}
+.dv-flash-dialog .dv-flash-premium-brand img{height:58px!important;width:min(175px,55%)}
+.dv-flash-dialog .dv-flash-premium-hero h1{font-size:clamp(27px,4vw,35px);margin-bottom:9px}
+.dv-flash-dialog .dv-flash-premium-meta{margin-top:14px}
+.dv-flash-dialog .dv-flash-premium-meta span,.dv-flash-dialog .dv-flash-premium-tag{background:rgba(255,255,255,.38)!important;border:1px solid rgba(255,255,255,.6)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.dv-flash-dialog .dv-flash-premium-empty{padding:10px 0 3px!important}
+.dv-flash-dialog .dv-flash-premium-empty-icon{width:60px;height:60px;border-radius:21px;background:linear-gradient(140deg,rgba(255,255,255,.72),rgba(255,172,75,.32))!important;border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 1px 0 #fff9,0 8px 24px #e97b2920}
+.dv-flash-dialog .dv-flash-premium-empty h2{font-size:clamp(21px,3.8vw,25px)}
+.dv-flash-dialog .dv-flash-premium-empty p{margin-bottom:15px}
+.dv-flash-dialog .dv-flash-premium-offer{background:rgba(255,255,255,.34)!important;border:1px solid rgba(255,255,255,.6)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 #fff8,0 12px 30px #0000000b}
+.dv-flash-dialog .dv-flash-premium-action{box-shadow:0 7px 18px #f2673240,inset 0 1px 0 #ffffff60}
+[data-theme=dark] .dv-flash-dialog .dv-flash-premium{color:#f8f8fa}
+[data-theme=dark] .dv-flash-dialog .dv-flash-premium-hero{background:linear-gradient(130deg,#ffffff16,#ff8b3010 70%,transparent)!important;border-color:#ffffff1e!important}
+[data-theme=dark] .dv-flash-dialog .dv-flash-premium-meta span,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-tag,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-offer{background:#ffffff12!important;border-color:#ffffff2c!important}
+[data-theme=dark] .dv-flash-dialog .dv-flash-premium-hero p,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-empty p,[data-theme=dark] .dv-flash-dialog .dv-flash-premium-offer p{color:#cbd0d7!important}
+@media(max-width:520px){.dv-flash-dialog .dv-flash-premium-hero{padding:23px 20px 19px!important}.dv-flash-dialog .dv-flash-premium-content{padding:17px 20px 23px!important}.dv-flash-dialog .dv-flash-premium-brand img{height:49px!important}}
