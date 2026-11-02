@@ -13,3 +13,14 @@
 .dv-rp-item-main strong{display:block;color:#e96129;font-size:18px;margin-top:8px}
 .dv-rp-add{min-height:42px;white-space:normal;display:inline-flex;align-items:center;justify-content:center;gap:6px}
 @media(max-width:480px){.dv-rp-item-main>img{width:92px;height:92px}.dv-rp-item{padding:12px}.dv-rp-add{width:100%;margin-top:10px}}
+
+/* Package #7: menu navigation and product details, without extra panels */
+.dv-rp-categories{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:6px 0 13px;max-width:100%}
+.dv-rp-categories button{flex:0 0 auto;white-space:nowrap;padding:9px 14px;border:1px solid var(--line,#e6e6e6);border-radius:999px;background:var(--surface,#fff);color:inherit;font:inherit;font-size:13px;cursor:pointer}
+.dv-rp-categories button.active{border-color:#f26732;background:linear-gradient(125deg,#f26732,#f59a40);color:white}
+.dv-rp-verified{color:#238f66;font-weight:700}
+.dv-rp-details-add{display:inline-flex;align-items:center;justify-content:center;min-height:38px;margin-top:12px;padding:9px 14px;border:0;border-radius:12px;background:linear-gradient(125deg,#ed652f,#f99d43);color:white;font:inherit;font-weight:700;cursor:pointer}
+.dv-rp-item-extra{overflow-wrap:anywhere}
+.dv-rp-review{border-radius:14px;padding:12px;background:var(--soft,#f5f5f5);margin-bottom:9px}
+.dv-rp-review strong{display:inline-flex;align-items:center;gap:5px}
+.dv-rp-review p{margin-bottom:0}
