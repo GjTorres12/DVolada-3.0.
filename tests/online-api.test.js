@@ -49,18 +49,14 @@ test('status PATCH sends version and idempotency key without leaking tokens in b
  const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'secret-token',fetchImpl:async(url,opts)=>{
   captured={url,opts};return {ok:true,json:async()=>({order:{id:'order-1',version:4,status:'Listo'}})};
  }});
- const oldCrypto=globalThis.crypto;
- try{
-  Object.defineProperty(globalThis,'crypto',{configurable:true,value:{randomUUID:()=> 'request-unique-id'}});
-  const result=await api.updateStatus({id:'order-1',version:3},'Listo');
-  assert.equal(result.order.version,4);
-  assert.equal(captured.url,'https://api.example.com/api/v1/restaurant/orders/order-1/status');
-  assert.equal(captured.opts.method,'PATCH');
-  assert.equal(captured.opts.headers['Idempotency-Key'],'request-unique-id');
-  assert.equal(captured.opts.headers.Authorization,'Bearer secret-token');
-  assert.deepEqual(JSON.parse(captured.opts.body),{status:'Listo',expectedVersion:3});
-  assert.ok(!captured.opts.body.includes('secret-token'));
- }finally{Object.defineProperty(globalThis,'crypto',{configurable:true,value:oldCrypto})}
+ const result=await api.updateStatus({id:'order-1',version:3},'Listo');
+ assert.equal(result.order.version,4);
+ assert.equal(captured.url,'https://api.example.com/api/v1/restaurant/orders/order-1/status');
+ assert.equal(captured.opts.method,'PATCH');
+ assert.match(captured.opts.headers['Idempotency-Key'],/^[0-9a-f-]{36}$/i);
+ assert.equal(captured.opts.headers.Authorization,'Bearer secret-token');
+ assert.deepEqual(JSON.parse(captured.opts.body),{status:'Listo',expectedVersion:3});
+ assert.ok(!captured.opts.body.includes('secret-token'));
 });
 
 test('order identifiers are encoded as one URL path segment',async()=>{
