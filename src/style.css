@@ -1314,3 +1314,12 @@ body:has(.modal-backdrop) .bottom-bar,body:has(.modal-backdrop) .dv-bottom-nav,b
 
 /* R09-03: navegación inferior fuera de las ventanas de confirmación */
 body:has(.modal-backdrop) .mobile-nav.dv-compact-nav{visibility:hidden!important}
+
+/* R14/R15: restaurant boundaries and per-restaurant checkout breakdown */
+.dv-cart-restaurant-group{padding:14px 0;border-bottom:1px solid var(--line,#ddd)}
+.dv-cart-restaurant-group h3{margin:0 0 12px}
+.dv-cart-group-subtotal{display:flex;justify-content:space-between;gap:12px;margin:12px 0 0;font-size:13px;color:var(--muted,#777)}
+.dv-checkout-restaurant{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--line,#ddd)}
+.dv-back-to-cart{margin:0 0 12px}
+.dv-chat-fab-draggable{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.dv-chat-fab-draggable:active{cursor:grabbing}
