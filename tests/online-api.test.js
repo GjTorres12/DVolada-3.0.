@@ -43,3 +43,34 @@ test('rejects unversioned orders before sending an update',async()=>{
  await assert.rejects(api.updateStatus({id:'1'},'Listo'),/versión/);
  assert.equal(called,false);
 });
+
+test('status PATCH sends version and idempotency key without leaking tokens in body',async()=>{
+ let captured;
+ const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'secret-token',fetchImpl:async(url,opts)=>{
+  captured={url,opts};return {ok:true,json:async()=>({order:{id:'order-1',version:4,status:'Listo'}})};
+ }});
+ const oldCrypto=globalThis.crypto;
+ try{
+  Object.defineProperty(globalThis,'crypto',{configurable:true,value:{randomUUID:()=> 'request-unique-id'}});
+  const result=await api.updateStatus({id:'order-1',version:3},'Listo');
+  assert.equal(result.order.version,4);
+  assert.equal(captured.url,'https://api.example.com/api/v1/restaurant/orders/order-1/status');
+  assert.equal(captured.opts.method,'PATCH');
+  assert.equal(captured.opts.headers['Idempotency-Key'],'request-unique-id');
+  assert.equal(captured.opts.headers.Authorization,'Bearer secret-token');
+  assert.deepEqual(JSON.parse(captured.opts.body),{status:'Listo',expectedVersion:3});
+  assert.ok(!captured.opts.body.includes('secret-token'));
+ }finally{Object.defineProperty(globalThis,'crypto',{configurable:true,value:oldCrypto})}
+});
+
+test('order identifiers are encoded as one URL path segment',async()=>{
+ let url;
+ const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'x',fetchImpl:async(u)=>{url=u;return {ok:true,json:async()=>({})}}});
+ await api.getOrder('order/123?x=1');
+ assert.equal(url,'https://api.example.com/api/v1/restaurant/orders/order%2F123%3Fx%3D1');
+});
+
+test('server errors preserve HTTP status and message',async()=>{
+ const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'x',fetchImpl:async()=>({ok:false,status:403,json:async()=>({error:'Acceso denegado'})})});
+ await assert.rejects(api.listOrders(),error=>error instanceof OnlineApiError&&error.status===403&&error.message==='Acceso denegado');
+});
