@@ -7,9 +7,13 @@ export class OnlineApiError extends Error {
  constructor(message,status,details){super(message);this.name='OnlineApiError';this.status=status;this.details=details}
 }
 export function createOnlineApi({baseUrl,getAccessToken,fetchImpl=fetch}){
- if(!/^https:\/\//i.test(baseUrl||'')&&!/^http:\/\/localhost(?::\d+)?$/i.test(baseUrl||''))throw Error('Online API requires HTTPS (or localhost for development)');
+ let parsed;
+ try{parsed=new URL(baseUrl)}catch{throw Error('Online API requires a valid HTTPS URL (or localhost for development)')}
+ const local=parsed.protocol==='http:'&&parsed.hostname==='localhost';
+ if(parsed.protocol!=='https:'&&!local)throw Error('Online API requires HTTPS (or localhost for development)');
+ if(parsed.username||parsed.password||parsed.search||parsed.hash||parsed.pathname!=='/'&&parsed.pathname!=='')throw Error('Online API URL must be an origin without credentials, path, query or fragment');
  if(typeof getAccessToken!=='function')throw Error('Authenticated token provider required');
- const base=baseUrl.replace(/\/$/,'');
+ const base=parsed.origin;
  async function request(path,{method='GET',body,signal,idempotencyKey}={}){
   const token=await getAccessToken();
   if(!token)throw new OnlineApiError('Sesión no disponible',401);
