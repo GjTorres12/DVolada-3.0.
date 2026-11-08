@@ -1,0 +1,20 @@
+name: Validar cambios Dvolada
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Pruebas de API Online
+        run: npm run test:online
+      - name: Compilar aplicación
+        run: npm run build
