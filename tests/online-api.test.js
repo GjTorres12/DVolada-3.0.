@@ -70,3 +70,21 @@ test('server errors preserve HTTP status and message',async()=>{
  const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'x',fetchImpl:async()=>({ok:false,status:403,json:async()=>({error:'Acceso denegado'})})});
  await assert.rejects(api.listOrders(),error=>error instanceof OnlineApiError&&error.status===403&&error.message==='Acceso denegado');
 });
+
+test('rejects API URLs with embedded credentials or unexpected paths',()=>{
+ for(const baseUrl of [
+  'https://user:password@api.example.com',
+  'https://api.example.com/redirect',
+  'https://api.example.com/?token=secret',
+  'https://api.example.com/#fragment',
+  'http://127.0.0.1:8787',
+  'not-a-url'
+ ])assert.throws(()=>createOnlineApi({baseUrl,getAccessToken:()=> 'token'}));
+});
+
+test('accepts localhost HTTP only for development and normalizes origin',async()=>{
+ let captured;
+ const api=createOnlineApi({baseUrl:'http://localhost:8787/',getAccessToken:()=> 'token',fetchImpl:async url=>{captured=url;return {ok:true,json:async()=>({orders:[]})}}});
+ await api.listOrders();
+ assert.equal(captured,'http://localhost:8787/api/v1/restaurant/orders');
+});
