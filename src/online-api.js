@@ -18,11 +18,13 @@ export function createOnlineApi({baseUrl,getAccessToken,fetchImpl=fetch}){
   const token=await getAccessToken();
   if(!token)throw new OnlineApiError('Sesión no disponible',401);
   const response=await fetchImpl(base+path,{
-   method,signal,cache:'no-store',
+   method,signal,cache:'no-store',redirect:'error',
    headers:{Authorization:'Bearer '+token,...(body?{'Content-Type':'application/json'}:{}),...(idempotencyKey?{'Idempotency-Key':idempotencyKey}:{})},
    ...(body?{body:JSON.stringify(body)}:{})
   });
-  const data=await response.json().catch(()=>({error:'Respuesta inválida del servidor'}));
+  let data;
+  try {data=await response.json()} catch {throw new OnlineApiError('Respuesta inválida del servidor',response.status)}
+  if(!data||typeof data!=='object'||Array.isArray(data))throw new OnlineApiError('Respuesta inválida del servidor',response.status);
   if(!response.ok)throw new OnlineApiError(data.error||'Error de servidor',response.status,data);
   return data;
  }
@@ -32,7 +34,7 @@ export function createOnlineApi({baseUrl,getAccessToken,fetchImpl=fetch}){
   getOrder:(id,signal)=>request('/api/v1/restaurant/orders/'+encodeURIComponent(id),{signal}),
   changes:(cursor='0',signal)=>request('/api/v1/restaurant/orders/changes?since='+encodeURIComponent(cursor),{signal}),
   async updateStatus(order,status){
-   if(!order?.id||!Number.isSafeInteger(order.version))throw Error('Pedido sin versión del servidor');
+   if(!order?.id||(!Number.isSafeInteger(order.version)||order.version<1))throw Error('Pedido sin versión del servidor');
    if(typeof crypto==='undefined'||typeof crypto.randomUUID!=='function')throw Error('Se requiere un navegador seguro para generar clave única');
    return request('/api/v1/restaurant/orders/'+encodeURIComponent(order.id)+'/status',{
     method:'PATCH',idempotencyKey:crypto.randomUUID(),
