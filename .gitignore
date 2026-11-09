@@ -1,0 +1,7 @@
+node_modules/
+dist/
+public/icon-clean-192.png
+public/icon-clean-512.png
+.env
+.env.*
+!.env.example
