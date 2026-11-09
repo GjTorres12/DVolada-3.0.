@@ -10,7 +10,9 @@ export default function PwaUpdatePrompt(){
  useEffect(()=>{
   let alive=true,registration=null,timer=null,removeWorker=()=>{};
   const inspect=reg=>{if(!alive)return;if(reg?.waiting&&navigator.serviceWorker.controller){waitingRef.current=reg.waiting;setWaiting(reg.waiting)}};
-  const onController=()=>window.location.reload();
+  // The first installation claims this tab too; do not discard an active form.
+  let hadController=Boolean(navigator.serviceWorker?.controller);
+  const onController=()=>{if(hadController)window.location.reload();else hadController=true};
   const check=async()=>{
    if(!navigator.onLine)return;
    try{
