@@ -2,11 +2,19 @@ name: Validar cambios Dvolada
 on:
   pull_request:
     branches: [main]
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
 permissions:
   contents: read
+concurrency:
+  group: validar-dvolada-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
