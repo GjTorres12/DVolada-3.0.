@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: '22'
       - name: Instalar dependencias
-        run: npm install --no-audit --no-fund
-      - name: Pruebas de API Online
-        run: npm run test:online
+        run: npm ci --no-audit --no-fund
+      - name: Pruebas de regresión
+        run: npm test
       - name: Compilar aplicación
         run: npm run build

@@ -33,6 +33,7 @@ export default function DraggableChatFab({onOpen}){
     style={position?{left:Math.min(position.x,Math.max(8,window.innerWidth-90)),top:Math.min(position.y,Math.max(8,window.innerHeight-65)),right:'auto',bottom:'auto'}:undefined}
     onPointerDown={down} onPointerMove={move} onPointerUp={up}
     onPointerCancel={()=>{gesture.current=null}}
+    onClick={e=>{if(e.detail===0)onOpen()}}
     aria-label="Abrir chat; mantené presionado y arrastrá para mover" title="Tocá para abrir o arrastrá para mover">
     <MessageCircle size={25}/><span>Chat</span>
   </button>;

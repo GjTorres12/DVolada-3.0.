@@ -88,3 +88,16 @@ test('accepts localhost HTTP only for development and normalizes origin',async()
  await api.listOrders();
  assert.equal(captured,'http://localhost:8787/api/v1/restaurant/orders');
 });
+
+test('rejects malformed successful responses instead of reporting a saved change',async()=>{
+ for(const json of [async()=>{throw new SyntaxError()},async()=>null,async()=>[],async()=> 'ok']){
+  const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'x',fetchImpl:async()=>({ok:true,status:200,json})});
+  await assert.rejects(api.listOrders(),error=>error instanceof OnlineApiError&&/inválida/.test(error.message));
+ }
+});
+test('authenticated requests refuse redirects and invalid order versions',async()=>{
+ let calls=0;
+ const api=createOnlineApi({baseUrl:'https://api.example.com',getAccessToken:()=> 'x',fetchImpl:async(url,opts)=>{calls++;assert.equal(opts.redirect,'error');return {ok:true,json:async()=>({orders:[]})}}});
+ for(const version of [0,-1,1.5])await assert.rejects(api.updateStatus({id:'1',version},'Listo'),/versión/);
+ assert.equal(calls,0);await api.listOrders();assert.equal(calls,1);
+});

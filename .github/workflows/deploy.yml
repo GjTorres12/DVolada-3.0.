@@ -23,9 +23,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
-      - name: Probar API Online antes de publicar
-        run: npm run test:online
+      - run: npm ci --no-audit --no-fund
+      - name: Probar regresiones antes de publicar
+        run: npm test
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
